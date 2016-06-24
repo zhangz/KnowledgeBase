@@ -27,3 +27,5 @@ dotPeek https://www.jetbrains.com/decompiler/
 Anaconda https://www.continuum.io/downloads
 
 f.lux https://justgetflux.com/
+
+NimbleText http://nimbletext.com/

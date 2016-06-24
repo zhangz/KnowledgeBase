@@ -250,3 +250,5 @@ http://jayvilalta.com/blog/2015/03/20/introducing-quartz-net-feature-pack/
 http://jayvilalta.com/blog/2012/11/24/table-of-contents-for-quartz-net-ebook/
 http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/
 http://www.quartz-scheduler.net/documentation/best-practices.html
+https://github.com/mausch/QuartzNetWebConsole
+https://github.com/guryanovev/CrystalQuartz
