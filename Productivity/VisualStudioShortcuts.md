@@ -1,0 +1,27 @@
+http://visualstudioshortcuts.com/2015/
+
+- F12：转到定义，与Ctrl+-配合使用非常方便
+- Ctrl+-：回到光标上一次位置
+- Ctrl+]：匹配选中的括号（大括号、小括号都行），在多层循环+判断语句时非常方便
+- Ctrl+Shift+Space：代码补全
+- Ctrl+Tab：在VS中切换打开的窗口，即切换各个文件
+- Shift+F12：Find Reference
+- Ctrl+F3：为当前选中的部分进行搜索（不需要输入要搜索的内容）
+- Ctrl+I：递增搜索，Ctrl+F不同的是搜索期间不显示搜索对话框，Ctrl+F搜索下一个直接按Enter即可，Ctrl+I搜索下一个按Ctrl+I或F3，Escape退出，连续按两次Ctrl+I重复上次搜索
+- Ctrl+Shift+F：文件搜索替换对话框
+- Shift+Alt+Enter：代码全屏模式，再按一次返回到原来界面
+- Ctrl+K+C：注释一段代码块
+- Ctrl+K+U：取消注释一段代码块
+- Ctrl+K+D：代码整理
+- Ctrl+K+F：只整理你选中的部分
+- Ctrl+L：剪切当前行
+- Ctrl+X：剪切当前行
+- Ctrl+Backspace：删除上一个单词
+- Ctrl+Del：删除下一个单词
+- Ctrl+M, Ctrl+M：展开或折叠当前区域
+- Ctrl+M, Ctrl+O：Collapse to Definitions
+- Ctrl+M, Ctrl+A：折叠所有
+- Ctrl+M, Ctrl+X：展开所有
+- Ctrl+M, Ctrl+H：Hide Selection
+- Ctrl+M, Ctrl+U：Stop Hiding Current
+- ALT+SHIFT+上下左右键，或者ALT + 鼠标：框选box selection
