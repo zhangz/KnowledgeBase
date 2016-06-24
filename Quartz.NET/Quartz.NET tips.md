@@ -30,3 +30,30 @@ public List<DateTimeOffset> Schedule(string cronExpression)
     return times;
 }
 ```
+
+## Unit Testing
+- You can / should unit test your quartz classes
+- Use a mocking framework
+- Mock the Scheduler (IScheduler)
+- Mock a calendar (ICalendar)
+- Use mocks to create your context
+
+Sample Unit Test
+```csharp
+[Test]
+public void ExecuteTests()
+{
+	JobDetail detail = new JobDetail();
+	IScheduler scheduler = new Mock<IScheduler>().Object;
+	ICalendar calendar = new Mock<ICalendar>().Object;
+	IJob job = new NoOpJob();
+	detail.Name = "Test";
+	detail.JobDataMap.Add("SOMETHING", "ELSE");
+	TriggerFiredBundle bundle = new TriggerFiredBundle(detail, new SimpleTrigger(), calendar, false, null, null, null, null);
+	JobExecutionContext context = new JobExecutionContext(scheduler, bundle, job);
+	JobHistoryListener listener = new JobHistoryListener();
+	listener.JobToBeExecuted(context);
+	listener.JobWasExecuted(context, null);
+	//methods return void so need to get creative to determine if execution was successful
+}
+```

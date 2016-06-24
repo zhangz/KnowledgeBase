@@ -1,15 +1,55 @@
-# Using Quartz
-https://github.com/quartznet/quartznet
-https://github.com/jvilalta/QuartzNetBook
-https://github.com/jvilalta/QuartzNetFeaturePack
-http://jayvilalta.com/blog/2015/03/20/introducing-quartz-net-feature-pack/
-http://jayvilalta.com/blog/2012/11/24/table-of-contents-for-quartz-net-ebook/
-http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/
-http://www.quartz-scheduler.net/documentation/best-practices.html
+## What Is Quartz.Net
+- Scheduler (think task scheduler)
+- Queue for asynchronous jobs
+- C# port of Quartz (java)
+- Apache license
 
-There are at least two ways to use Quartz.Net: embedded (hosted) in your application or as a standalone windows service.
+## Why Use Quartz.Net
+- Scale out
+- Redundancy
+- Smart handling of failures
+- Job chaining (poor man’s workflow)
+- Custom scheduling
 
-When Quartz.Net is running, you may get a firewall warning window, which is because by default the scheduler exposes a remoting interface that allows you to interact with it.
+## The Basics
+- Scheduler
+	- Runs jobs
+	- Manages the scheduling
+- Jobs
+	- Do the work
+	- Some built-in
+	- Mostly roll you own
+	- Implement IJob
+- Triggers
+	- Tell the scheduler when jobs should run
+- Scheduling
+	- Associate a job to a trigger
+	- Multiple triggers can be set
+	- When the trigger fires, the job runs
+			scheduler.ScheduleJob(jobDetail, trigger);
+
+## Advanced Features
+- Listeners
+- Special Jobs
+	- Stateful Jobs
+	- Interruptible Jobs
+- Remote management
+	- Scheduler can be managed remotely
+	- Exposed via Remoting
+	- *Most* scheduler functions available
+- Clustering
+	- Load balancing
+	- Job Failover
+	- Caveat: clocks synchronized within a second
+- Plug-ins
+- Unit testing
+
+## How Can I Run It
+There are at least two ways to use Quartz.Net: 
+- Embedded (hosted) in your application 
+- As a standalone windows service
+
+*When Quartz.Net is running, you may get a firewall warning window, which is because by default the scheduler exposes a remoting interface that allows you to interact with it.*
 
 ## Set up Quartz Server
 
@@ -80,7 +120,10 @@ In order to the change the Quartz.Net service name, we’re going to be modifyin
 Open a command prompt as administrator in the same folder where your new service files are. Now type `Quartz.Server.exe install` in the command prompt.
 
 ## Configuring Quartz.Net
-There are 3 files we need to look at: Quartz.Server.Service.exe.config, quartz.config and quartz_jobs.xml.
+There are 3 files we need to look at: 
+- Quartz.Server.Service.exe.config
+- quartz.config
+- quartz_jobs.xml
 
 #### Job File Format
 quartz_jobs.xml, which contains the jobs that will be loaded by the initialization plugin.:
@@ -127,7 +170,7 @@ quartz_jobs.xml, which contains the jobs that will be loaded by the initializati
 	- `<description>`
 	- `<job-type>`
 	- `<durable>`: setting this to `true` means that the job will be kept around even if it doesn’t have any triggers pointing to it.
-	- `<recover>`: tells the scheduler whether it should try to recover (re-execute) the job if something goes wrong with the scheduler itself while the job was running.
+	- `<recover>`: tells the scheduler whether it should try to recover (re-execute) the job if something goes wrong with the scheduler itself while the job was running. This means the job should be coded in such a way that its work is idempotent.
 	- `<job-data-map>`: this map is used to pass data to the job.
 - The `<trigger>` element is used to describe the trigger that we want to attach to a given job. The trigger is identified by both the name and the group. The xml file loader plugin supports 3 types of triggers:
 	- simpleTriggerType
@@ -143,6 +186,14 @@ quartz_jobs.xml, which contains the jobs that will be loaded by the initializati
 	- `<priority>`
 	- `<calendar-name>`
 	- `<job-data-map>`
+
+  In addition to the elements listed above, each trigger type supports some additional elements.
+  
+Trigger Type | Additional Elements
+  ------------ | -------------
+  SimpleTrigger | `<misfire-instruction>`,`<repeat-count>`,`<repeat-interval>`
+  CronTrigger | `<misfire-instruction>`,`<cron-expression>`,`<time-zone>`
+  CalendarIntervalTrigger | `<misfire-instruction>`,`<repeat-interval>`,`<repeat-interval-unit>`
 
 #### How Does Quartz.Net Configuration Work?
 In Quartz.Net, the `StdSchedulerFactory` is responsible for configuring the scheduler. When the Quartz.Net scheduler is started, the factory will try to automatically configure a scheduler by looking for configuration information in different places:
@@ -186,4 +237,16 @@ quartz.scheduler.exporter.channelName = httpQuartz
 If all of the previous configuration options fail, then the factory falls back on loading the configuration file that is embedded in the quartz assembly.
 
 You’d think that by now, the whole configuration process is finished and the scheduler has been configured successfully. Well, the default scheduler factory takes one last step before giving you the configured scheduler. 
+
 Here’s what happens just after your configuration is loaded: if any of the configuration properties that you set in a configuration are also present in the environment variables, then the factory will overwrite them with the environment value.
+
+You can use the `GetMetaData()` method on the instance of `Scheduler` to get information such as the version of quartz.net, threadpool size, jobStoreType, jobStorePersistanceType, etc.
+
+## Resources
+https://github.com/quartznet/quartznet
+https://github.com/jvilalta/QuartzNetBook
+https://github.com/jvilalta/QuartzNetFeaturePack
+http://jayvilalta.com/blog/2015/03/20/introducing-quartz-net-feature-pack/
+http://jayvilalta.com/blog/2012/11/24/table-of-contents-for-quartz-net-ebook/
+http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/
+http://www.quartz-scheduler.net/documentation/best-practices.html

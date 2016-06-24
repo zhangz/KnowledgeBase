@@ -22,16 +22,16 @@ To configure and use a `DirectoryScanJob`, you will need to set the following ke
 - `DIRECTORY_SCAN_LISTENER_NAME`: this is the name of the `DirectoryScanListener` that should called if changes are detected
 - `MINIMUM_UPDATE_AGE`: this is an optional parameter which lets you specify how many milliseconds must have passed since the file’s last modified time in order to consider the file modified. If this parameter is not specified, it defaults to 5000 milliseconds.
 
-**FileScanJob**
+**FileScanJob**: monitors last modified date
 
-**NativeJob**
+**NativeJob**: runs executables or batch files
 
-**NoOpJob**
+**NoOpJob**: does nothing
 
-**SendMailJob**
+**SendMailJob**: sends emails
 
 ## Job Factories
-The Quartz.Net scheduler implements the factory method pattern to create the jobs that will be executed. Job factories are responsible for producing job instances.
+The Quartz.Net scheduler implements the factory method pattern to create the jobs that will be executed. Job factories are responsible for producing job instances. Create your own if you use DI or IoC container.
 
 #### IJobFactory Interface
 All job factories in Quartz.Net must implement the `IJobFactory` interface. The `NewJob` method will throw a `SchedulerException` if it was unable to create a new instance of the job.
@@ -119,3 +119,12 @@ public void ScheduleOneTimeJob(Type jobType, JobDataMap dataMap)
   GetScheduler().ScheduleJob(jobDetail, trigger);
 }
 ```
+
+## Job Stores
+- RAMJobStore
+- AdoJobStore
+	- MySql
+	- Oracle
+	- Postgres
+	- SQL Lite
+	- SQL Server

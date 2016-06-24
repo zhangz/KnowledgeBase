@@ -5,6 +5,12 @@ What are plugins used for in Quartz.Net 2.0? Well, plugins come in handy if ther
 
 In order to implement a listener in Quartz.Net 2.0 there are several steps we need to take. First we must implement the `ISchedulerPlugin` interface and then we must configure the scheduler to load our plugin. Let’s get started.
 
+#### Built-In Plug-ins
+- JobInitializationPlugin
+- LoggingJobHistoryPlugin
+- LoggingTriggerHistoryPlugin
+- ShutdownHookPlugin
+
 #### Implementing the ISchedulerPlugin Interface
 In order to create your own plugin, you have to implement the ISchedulerPlugin interface. Here is the ISchedulerPlugin interface definition:
 ```csharp
