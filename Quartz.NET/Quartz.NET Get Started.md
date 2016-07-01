@@ -252,3 +252,5 @@ http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/
 http://www.quartz-scheduler.net/documentation/best-practices.html
 https://github.com/mausch/QuartzNetWebConsole
 https://github.com/guryanovev/CrystalQuartz
+http://cronexpressiondescriptor.azurewebsites.net/
+http://www.cronmaker.com/
