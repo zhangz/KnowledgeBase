@@ -14,6 +14,8 @@ Cmder http://cmder.net/
 
 Gow https://github.com/bmatzelle/gow
 
+oh-my-posh https://github.com/janjoris/oh-my-posh/
+
 GitHub Desktop https://desktop.github.com/
 
 LINQPad http://www.linqpad.net/
