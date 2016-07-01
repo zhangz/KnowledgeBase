@@ -18,7 +18,13 @@ oh-my-posh https://github.com/janjoris/oh-my-posh/
 
 GitHub Desktop https://desktop.github.com/
 
+GitKraken https://www.gitkraken.com/
+
+Git Extensions http://gitextensions.github.io/
+
 LINQPad http://www.linqpad.net/
+
+RoslynPad https://roslynpad.net/
 
 MarkdownPad http://markdownpad.com/
 
