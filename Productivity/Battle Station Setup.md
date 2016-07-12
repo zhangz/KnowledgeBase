@@ -1,4 +1,4 @@
-# Battle Station Setup
+## Battle Station Setup
 
 7-Zip http://www.7-zip.org/
 
@@ -37,3 +37,24 @@ Anaconda https://www.continuum.io/downloads
 f.lux https://justgetflux.com/
 
 NimbleText http://nimbletext.com/
+
+TailBlazer https://github.com/RolandPheasant/TailBlazer
+
+#### VS Plugins
+* VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
+* XAML Magic https://visualstudiogallery.msdn.microsoft.com/0d682c2e-3c5e-4f0e-8b54-d37ecb25eb7e
+* Configuration Transform https://visualstudiogallery.msdn.microsoft.com/579d3a78-3bdd-497c-bc21-aa6e6abbc859
+* Disable Solution Explorer's Dynamic Nodes https://visualstudiogallery.msdn.microsoft.com/62461a72-4255-4eac-a630-52758e9c3723
+* File Nesting https://visualstudiogallery.msdn.microsoft.com/3ebde8fb-26d8-4374-a0eb-1e4e2665070c
+* Smooth Scroll https://visualstudiogallery.msdn.microsoft.com/30b1f9a2-845d-48f2-aafc-98ece8817a87
+* Learn the Shortcut https://visualstudiogallery.msdn.microsoft.com/29f07f2c-68aa-47fa-b1c3-48065209b110
+* Open in Notepad++ https://visualstudiogallery.msdn.microsoft.com/4f30cefe-1ca0-4b71-9ec8-03c6ef1114c3
+* Open Command Line https://visualstudiogallery.msdn.microsoft.com/4e84e2cf-2d6b-472a-b1e2-b84932511379
+* ReAttach https://visualstudiogallery.msdn.microsoft.com/8cccc206-b9de-42ef-8f5a-160ad0f017ae
+* BuildVision https://visualstudiogallery.msdn.microsoft.com/23d3c821-ca2d-4e1a-a005-4f70f12f77ba
+* Clr Heap Allocation Analyzer https://visualstudiogallery.msdn.microsoft.com/f9b47b93-8675-4ae0-9c52-5da8027c4bb8
+* Refactoring Essentials for Visual Studio https://visualstudiogallery.msdn.microsoft.com/68c1575b-e0bf-420d-a94b-1b0f4bcdcbcc
+* C# Analyzers and Refactorings https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
+* Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
+* Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
+* ConEmuIntegration https://visualstudiogallery.msdn.microsoft.com/a0536370-40e4-4141-8f51-5f00d0434012
