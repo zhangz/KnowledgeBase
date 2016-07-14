@@ -1,42 +1,43 @@
 When dealing with custom data structures funny things can happen. This is especially true if multiple threads can mutate state and you have several locks playing in the mix. Doing a code review is quite challenging with such code but still some bugs slip through. After quite a lot of debugging the final bug turned out to have nothing to do with multithreading but a problematic IComparable implementation. What will the following small program print as output?
-
-    using System;
-    using System.Collections.Generic;
-    namespace SortedSetTest
-    {
-    	class Data : IComparable<Data>
-    	{
-    		public byte[] Payload
-    		{
-    			get;
-    			set;
-    		}
-    		public int CompareTo(Data other)
-    		{
-       			return this.Payload == other.Payload ? 0 : 1;
-    		}
-    	}
-    	class Program
-    	{
-    		static void Main(string[] args)
-    		{
-    			var set = new SortedSet<Data>();
-    			var payload = new byte[10];
-    			var payload2 = new byte[20];
-    			var payload3 = new byte[30];
-    			var d1 = new Data { Payload = payload };
-    			var d2 = new Data { Payload = payload2 };
-    			var d3 = new Data { Payload = payload3 };
-    			set.Add(d1);
-    			set.Add(d2);
-    			set.Add(d3);
-    			set.Remove(d1);
-    			set.Remove(d3);
-    			set.Remove(d2);
-    			Console.WriteLine($"Final Count: {set.Count}");
-    		}
-    	}
-    }
+```csharp
+using System;
+using System.Collections.Generic;
+namespace SortedSetTest
+{
+	class Data : IComparable<Data>
+	{
+		public byte[] Payload
+		{
+			get;
+			set;
+		}
+		public int CompareTo(Data other)
+		{
+			return this.Payload == other.Payload ? 0 : 1;
+		}
+	}
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			var set = new SortedSet<Data>();
+			var payload = new byte[10];
+			var payload2 = new byte[20];
+			var payload3 = new byte[30];
+			var d1 = new Data { Payload = payload };
+			var d2 = new Data { Payload = payload2 };
+			var d3 = new Data { Payload = payload3 };
+			set.Add(d1);
+			set.Add(d2);
+			set.Add(d3);
+			set.Remove(d1);
+			set.Remove(d3);
+			set.Remove(d2);
+			Console.WriteLine($"Final Count: {set.Count}");
+		}
+	}
+}
+```
 
 You can choose from
 
@@ -49,7 +50,9 @@ You can choose from
 
 And the winner is:
 
-	Final Count: 1
+```
+Final Count: 1
+```
 
 This was unexpected. If you break the rules of the IComparable interface you can get from never terminating sorts up to silent data structure corruption everything. The generic interface description is not particularly helpful but the non generic version spells it out [explicitly](https://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx):
 
@@ -71,26 +74,28 @@ The spirit of this rule is that in order to sort things you need to support the 
 
 So how can this be fixed? That all depends on what you treat as equal. If you care only about array sizes and not their contents then your CompareTo method becomes
 
-	public int CompareTo(Data other)
+```csharp
+public int CompareTo(Data other)
+{
+	int lret = 0;
+	if (Object.ReferenceEquals(Payload, other.Payload))
 	{
-        int lret = 0;
-        if( Object.ReferenceEquals(Payload, other.Payload))
-        {
-        	lret = 0;
-        }
-        else if (other.Payload == null)
-        {
-            lret = 1;
-        }
-        else if (Payload == null)
-        {
-            lret= -1;
-        }
-        else
-        {
-            lret = Payload.Length.CompareTo(other.Payload.Length);
-        }
-        return lret;
-    }
+		lret = 0;
+	}
+	else if (other.Payload == null)
+	{
+		lret = 1;
+	}
+	else if (Payload == null)
+	{
+		lret = -1;
+	}
+	else
+	{
+		lret = Payload.Length.CompareTo(other.Payload.Length);
+	}
+	return lret;
+}
+```
 
 That fixed version will also follow rule 6 for null values which is also good practice. For some time I have thought that SortedSet<T> was broken but as usual the BCL classes are ok but the fault was in our code. How hard can it be to write a comparison method? It turns out there are 6 rules to be followed which are quite a lot for a seemingly simple function.
