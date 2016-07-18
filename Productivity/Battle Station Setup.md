@@ -58,3 +58,5 @@ TailBlazer https://github.com/RolandPheasant/TailBlazer
 * Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
 * Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
 * ConEmuIntegration https://visualstudiogallery.msdn.microsoft.com/a0536370-40e4-4141-8f51-5f00d0434012
+* Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
+* XAML Power Toys https://visualstudiogallery.msdn.microsoft.com/2abb43bb-350b-4f2c-bc0f-a8262a0094d3
