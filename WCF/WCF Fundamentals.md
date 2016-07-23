@@ -125,17 +125,17 @@ Rules :
 
 You have to follow certain rules while working with Message contract
 
-1. When using Message contract type as parameter, Only one parameter can be used in servicie Operation
+- When using Message contract type as parameter, Only one parameter can be used in servicie Operation
 ```csharp
 [OperationContract]
 void SaveEmployeeDetails(EmployeeDetails emp);
 ```
-2. Service operation either should return Messagecontract type or it should not return any value
+- Service operation either should return Messagecontract type or it should not return any value
 ```csharp
 [OperationContract]
 EmployeeDetails GetEmployeeDetails();
 ```
-3. Service operation will accept and return only message contract type. Other data types are not allowed.
+- Service operation will accept and return only message contract type. Other data types are not allowed.
 ```csharp
 [OperationContract]
 EmployeeDetails ModifyEmployeeDetails(EmployeeDetails emp);
@@ -564,6 +564,7 @@ public interface IMyContract
 	void SubscribeEvent();
 }
 
+// service code
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
 public class MyPublisher : IMyContract
 {
@@ -597,6 +598,7 @@ static void Main(string[] args)
 	host.Close();
 }
 
+// client code
 class EventServiceClient : DuplexClientBase<IMyContract>, IMyContract
 {
 	public EventServiceClient(InstanceContext eventCntx)
