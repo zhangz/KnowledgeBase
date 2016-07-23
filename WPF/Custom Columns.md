@@ -32,6 +32,7 @@ http://www.shujaat.net/2012/09/dynamically-generated-properties-using.html
 ## Approach 2
 Use a `DependencyProperty` to bind a listview to an unknown dataset.
 http://www.codeproject.com/KB/WPF/WPF_DynamicListView.aspx
+
 http://stackoverflow.com/questions/320089/how-do-i-bind-a-wpf-datagrid-to-a-variable-number-of-columns
 
 ## Appraoch 3
