@@ -1,10 +1,11 @@
 # Custom Columns
 This is inveatigation on creating custom columns of WPF (WinForms) grids. The features below needs to be supported:
-1. Dynamically add/remove columns at runtime.
-2. Do it in MVVM style
-3. When update a single column, only send its value and locate the column then update it. This means we do updates without sending all data (unchanged) to client from service.
-4. Paging support
-4. We used the ICustomTypeDescriptor interface for such a task but that will get messy fast.
+- Dynamically add/remove columns at runtime.
+- Do it in MVVM style
+- When update a single column, only send its value and locate the column then update it. This means we do updates without sending all data (unchanged) to client from service.
+- Paging support
+- We used the ICustomTypeDescriptor interface for such a task but that will get messy fast.
+- Add an extension for BindingList<T> which does a DiffUpdate but does all of the smarts to turn off change events and such whhile the list is updating. Then turns them back on once the update is done raises a ResetBinding if the list changed
 
 ## Approach 1
 You can do it by implementing `ITypedList` interface by your ItemsSource collection. DataGrid will use `PropertyDescriptor`s returned from `ITypedList.GetItemProperties` method to generate `DataGridColumn`s automatically without any additional XAML by internally using `DataGrid.GenerateColumns` method.

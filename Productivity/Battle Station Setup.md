@@ -40,6 +40,10 @@ NimbleText http://nimbletext.com/
 
 TailBlazer https://github.com/RolandPheasant/TailBlazer
 
+scoop http://scoop.sh/
+
+snipaste http://zh.snipaste.com/
+
 #### VS Plugins
 * VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
 * XAML Magic https://visualstudiogallery.msdn.microsoft.com/0d682c2e-3c5e-4f0e-8b54-d37ecb25eb7e

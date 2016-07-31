@@ -290,6 +290,18 @@ WCF behaviors:
 - Transaction Behavior - Enables the rollback of transacted operations if a failure occurs.
 - Dispatch Behavior - Controls how a message is processed by the WCF Infrastructure.
 
+Behavior extensions:
+It enables the user to create user-defined behavior elements. These elements can be used alongside the standard WCF behavior elements.
+
+```xml
+<extensions>
+  <behaviorExtensions>
+     <add name="protobuf" type="ProtoBuf.ServiceModel.ProtoBehaviorExtension, protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67"/>
+  </behaviorExtensions>
+</extensions>
+```
+
+
 ```csharp
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single)]
 public class EvalService : IEvalService
@@ -470,6 +482,10 @@ Client will be blocked only for a moment till it dispatches its call to service.
 
 Client can continue to execute its statement, after making one-way call to server. There is no need to wait, till server execute. Sometime when one-way calls reach the service, they may not be dispatched all at once but may instead be queued up on the service side to be dispatched one at a time, according to the service's configured concurrency mode behavior. If the number of queued messages has exceeded the queue's capacity, the client will be blocked even if it's issued a one-way call. However, once the call is queued, the client will be unblocked and can continue executing, while the service processes the operation in the background.
 
+Limitations:
+- The method has no return value (return void)
+- Do not support `ref` and `out` parameter
+
 One-way operation can be enabled by setting IsOneWay property to true in Operation contract attribute.
 ```csharp
 [ServiceContract]
@@ -480,7 +496,7 @@ public interface IMyService
 }
 ```
 
-#### Callback
+#### Callback (duplex)
 WCF also provides the service to call the client.
 - HTTP protocols are connectionless nature, so it is not supported for callback operation. So `BasicHttpBinding` and `WSHttpBinding` cannot be used for this operation.
 - WCF support `WSDualHttpBinding` for callback operation.
@@ -491,7 +507,7 @@ Callback service can be enabled by using `CallbackContrac`t property in the `Ser
 ```csharp
 public interface IMyContractCallback
 {
-	[OperationContract]
+	[OperationContract(IsOneWay=true)]
 	void OnCallback();
 }
 
