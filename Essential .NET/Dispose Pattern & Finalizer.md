@@ -1,7 +1,7 @@
-## Dispose
+## Dispose Pattern
 As the GC is non-deterministic, the Dispose Pattern is available so that you can release the resources you are using - managed or unmanaged. A class should implement `IDisposable` when it is necessary to cleanup resources.
 
-The Garbage collecter will never directly execute a `Dispose` method for you. It must be **explicity** called if resources are to be released, such as within a `using` or `try finally` block. Implementing `IDisposable` provides a way for users of your class to release resources early, instead of waiting for the garbage collector.
+The Garbage collecter will never directly execute a `Dispose` method for you. It must be **explicity** called if resources are to be released, such as within a `using` or `try finally` block. Implementing `IDisposable` provides a way for users of your class to release resources early, instead of waiting for the garbage collector. Note that calling Dispose does not delete the managed object from the managed heap.
 
 Calling `Dispose()` on an object provides for the following:
 - Reduce strain on the GC for the process.
@@ -15,6 +15,8 @@ Calling `Dispose()` on an object provides for the following:
 - You can unregister/detach event handlers in Dispose(). Remember that these are also rooted references.
 - If you don't call `Dispose()` when using a COM object (using `Marshal.ReleaseComObject()`) the memory will be pinned and thus cannot be collected and therefore promoted to the next generation. 
 - Calling SuppressFinalize() in a Dispose implementation will stop a Finalizer from being called. If a Finalizer does not need to be called, the object will not be placed into the f-reachable queue, and thus not be promoted since it will take at least another full collection to have it collected.
+
+When defining your own type that implements the `IDisposable` interface, be sure to write code in all of your methods and properties to throw a `System.ObjectDisposedException` if the object has been explicitly cleaned up. A `Dispose` method should never throw an exception; if it's called multiple times, it should just return.
 
 Here is the code for properly implementing the `IDisposable` pattern in a **base class**:
 
@@ -116,7 +118,7 @@ protected virtual void Dispose(bool isDisposing)
 ///// All code executed within a Finalizer MUST be thread-safe!</remarks>
 //  ~MyDisposableClass()
 //  {
-//     Dispose( false );
+//     Dispose(false);
 //  }
 ```
 
@@ -197,7 +199,9 @@ protected override void Dispose(bool isDisposing)
 ```
 
 ### Thread Safety
-Use `Interlocked.Exchange` on a 'disposed' flag to ensure that one thread's Dispose attempt happens and the other is silently ignored. This's a good starting point, and it should have been part of the standard Dispose pattern (the CompareExchange should have been done in the sealed base-class wrapper method, to avoid the need for every derived class to use its own private disposed flag). Unfortunately, if one considers what Dispose actually does, things are much more complicated.
+It is possible to have multiple threads call `Dispose` on a single object simultaneously. However, the design guidelines state that Dispose does not have to be thread-safe. The reason is because code should be calling Dispose only if the code knows for a fact that no other thread is using the object.
+
+Use `Interlocked.Exchange` on a 'disposed' flag to ensure that one thread's Dispose attempt happens and the other is silently ignored. This's a good starting point. Unfortunately, if one considers what Dispose actually does, things are much more complicated.
 
 **The real purpose of Dispose is not to do something to the object being disposed, but rather to clean up other entities to which that object holds references**. For Dispose to be thread-safe, those other entities would to allow Dispose to clean them up at the same time as other threads might be doing other things with them. Some objects can handle such usage; others cannot.
 
@@ -207,7 +211,17 @@ One particular vexing example: Objects are allowed to have events with RemoveHan
 Calling `Dispose()` does **not** trigger a GC and the GC **never** calls `Dispose()`. `IDisposable` allows for release of **resources** associated with your object (if implemented correctly). `Dispose()` lets the GC know that you are done with this object and its **memory** can be reclaimed at the **next collection for the generation where that object lives**. Calling `Dispose()` has a direct correlation to the work that the GC has to do.
 
 ## Finalization
-There is no guarantee of when finalizers will be called, and indeed if you have enough memory, if it will ever be called.
+Fortunately for us, most types need only memory to operate. However, some types require more than just memory to be useful; some types require the use of a native resource in addition to memory.
+
+If a type wrapping a native resource gets GC'd, the GC will reclaim the memory used by the object in the managed heap; but the native resource, which the GC doesn't know anything about, will be leaked. This is clearly not desirable, so the CLR offers a mechanism called *finalization*. Finalization allows an object to execute some code after the object has been determined to be garbage but before the object's memory is reclaimed from the managed heap. 
+
+`System.Object` defines a protected and virtual method called `Finalize`. When the garbage collector determines that an object is garbage, it calls the object's `Finalize` method (if it is overridden).
+
+There is no guarantee of when finalizers will be called, and indeed if you have enough memory, if it will ever be called. Also, the CLR doesn't make any guarantees as to the order in which Finalize methods are called. So, you should avoid writing a Finalize method that accesses other objects whose type defines a Finalize method; those other objects could have been finalized already.
+
+Specifically, Finalize methods are designed for releasing native resources.
+
+It is highly recommended that developers avoid overriding Object’s Finalize method. If you are creating a managed type that wraps a native resource, you should first derive a class from a special base class called `System.Runtime.InteropServices.SafeHandle`. The `SafeHandle`-derived classes are extremely useful because they ensure that the native resource is freed when a GC occurs,e.g.`SafeWaitHandle`.
 
 You should only release unmanaged resources in the finalizer, since managed references may be invalid. ---? it become root object again, so all managed obj should be still live. Need to confirm.
 
@@ -216,14 +230,27 @@ You should only release unmanaged resources in the finalizer, since managed refe
 - Objects that need finalization cause collateral damage.
 - Objects needing finalization create work for the finalizer thread.
 
-The bad thing about finalizers is that it causes your object to survive a garbage collection. GC has no way of calling the finalizer during garbage collection. So objects that have to be finalized are moved to the finalizer queue and promotes it into next generation on the heap. And everything the object refers to, directly and indirectly, will also remain in memory. 
+### Finalization Internals
+When an application creates a new object, the new operator allocates the memory from the heap. If the object’s type defines a `Finalize` method, a pointer to the object is placed on the **finalization list** just before the type's instance constructor is called. The finalization list is an internal data structure controlled by the garbage collector. Each entry in the list points to an object that should have its Finalize method called before the object's memory can be reclaimed.
 
-The finalizer will run once the finalizer thread is available (if this takes too long the object might actually be promoted a second time). Since objects that live in generation 2 are collected about 10 times as less as objects that live in generation 1, and gen 1 ten times as less as gen 0, it can take some time for such object is finally garbage collected. This means your objects hang around longer, and potentially force more garbage collections.
+Even though `System.Object` defines a Finalize method, the CLR knows to ignore it; that is, when constructing an instance of a type, if the type’s `Finalize` method is the one inherited from `System.Object`, the object isn’t considered finalizable. One of the derived types must **override** Object’s `Finalize` method.
 
-If disposable object is created and it has a Finalizer, then it will get sent directly to the Finalization Queue and live for at least 1 *extra* GC collection. Once an object is placed in the Finalization Queue it will survive at least 2 additional GC collections - once for the Finalization Queue, once for the f-reachable Queue. Which means it will be promoted to Gen1 if it was in Gen0, and to Gen2 if it was in Gen1. If the object is on the LOH, so it survives until a full GC is performed twice which, under a "healthy" .NET app, a single full collection is performed approx. 1 in every 100 collections. If there is lots of pressure on the LOH Heap and GC, full GC's will fire more often. This is undesirable for performance reasons since full GC's take much more time to complete. Then there is also a dependency on what kind of GC you're running under and if you are using LatencyModes (be very careful with this). Even if you're running Background GC (this has replaced Concurrent GC in CLR 4.0), the ephemeral collection (Gen0 and Gen1) still blocks/suspends threads.
+When a garbage collection occurs, the garbage collector scans the **finalization list** looking for references to objects which are determined to be garbage. When a reference is found, the reference is removed from the **finalization list** and appended to the **f-reachable** queue (finalization queue).
+
+The memory occupied by objects, which didn’t have a `Finalize` method, will be reclaimed. However, the memory occupied by objects which have `Finalize` methods couldn't be reclaimed.
+
+A special high-priority CLR thread is dedicated to calling `Finalize` methods. When the f-reachable queue is empty (the usual case), this thread sleeps. But when entries appear, this thread wakes, removes each entry from the queue, and then calls each object’s `Finalize` method. In the future, the CLR may use multiple finalizer threads. So you should avoid writing any code that assumes that Finalize methods will be called serially. 
+
+The f-reachable queue is considered a root, just as static fields are roots. So a reference in the f-reachable queue keeps the object it refers to reachable and is not garbage (the object is resurrected).  The garbage collector compacts the reclaimable memory, which promotes the resurrected object to an older generation. And now, the special finalization thread empties the freachable queue, executing each object’s Finalize method.
+
+The next time the garbage collector is invoked on the older generation, it will see that the finalized objects are truly garbage. The memory for the object is simply reclaimed. 
+
+The bad thing about finalizers is that at least two garbage collections are required to reclaim memory used by objects that require finalization. In reality, more than two collections will be necessary because the objects get promoted to another generation. To make matters worse, everything the object refers to, directly and indirectly, will also remain in memory. 
+
+If the object is on the LOH, it survives until a full GC is performed twice which, under a "healthy" .NET app, a single full collection is performed approx. 1 in every 100 collections. If there is lots of pressure on the LOH Heap and GC, full GC's will fire more often. This is undesirable for performance reasons since full GC's take much more time to complete. Then there is also a dependency on what kind of GC you're running under and if you are using LatencyModes (be very careful with this). Even if you're running Background GC (this has replaced Concurrent GC in CLR 4.0), the ephemeral collection (Gen0 and Gen1) still blocks/suspends threads.
 
 ### Thread Safety
-Because the finalizer thread is just a simple thread that runs managed code (it calls the finalizers), it can block and even dead lock.
+The CLR uses a special, high-priority dedicated thread to call Finalize methods. Because the finalizer thread is just a simple thread that runs managed code (it calls the finalizers), it can block and even dead lock.
 
 During collection, the GC suspends all threads, even the finalizer queue. Once it is done, the GC thaws out the threads that it froze, and signals the finalizer thread "hey, you've got work to do". So when the finalizer thread starts running, the threads that were frozen by the GC are starting up again. If a user thread is waiting on a lock taken out by the finalizer thread, and the finalizer thread is waiting on a lock taken out by the user thread, then you've got a deadlock. 
 
@@ -236,7 +263,7 @@ The *finalizer* will be called automatically.
 Actually, I don't believe the GC calls Object.Finalize at all if it's not overridden. The object is determined to effectively not have a finalizer, and finalization is suppressed - which makes it more efficient, as the object doesn't need to be on the finalization/freachable queues. – Jon Skeet
 
 ## References
-https://msdn.microsoft.com/en-us/library/ms973837.aspx
+Chapter 21 - Working with Type Requiring Special Cleanup, CLR via C#.
 http://stackoverflow.com/questions/7520881/is-it-bad-practice-to-depend-on-the-net-automated-garbage-collector
 http://stackoverflow.com/questions/4267729/what-happens-if-i-dont-call-dispose-on-the-pen-object/5555243#5555243
 http://dave-black.blogspot.jp/2011/03/how-do-you-properly-implement.html
