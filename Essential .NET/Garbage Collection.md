@@ -41,6 +41,8 @@ most common trigger of a GC.
 - The CLR is unloading an `AppDomain`
 - The CLR is shutting down
 
+Garbage collections do not only occur when memory is full or close to full. Instead, garbage collections occur whenever generation 0 is full. 
+
 ### Large Objects
 A large object is 85,000 bytes or more in size. The CLR treats large objects slightly differently than how it treats small objects:
 - Large objects are not allocated within the same address space as small objects
@@ -121,3 +123,19 @@ Another great tool for analyzing the memory and performance of your application 
 
 Finally, you should look into using the SOS Debugging Extension (SOS.dll), which can often offer great assistance when debugging memory problems and other CLR problems.
 
+#### `GCHandle`
+
+#### `WeakReference<T>` 
+If you want to keep a reference to something as long as it is used elsewhere, you can use a weak reference. It can be useful for pointing to objects which should be available for GC if they are not actively in use.
+
+However, if the program uses large number of small objects, weak references can negatively affect memory usage. Weak references make your code more complicated and potentially error prone. There are runtime overheads with using weak references. If you use a weak references for something that your application is highly likely to need in the future, you may incur the cost of repeatedly recreating it. 
+
+#### `ConditionalWeakTable<TKey,TValue>` 
+It allows you to "attach" additional informationto existing, managed, non-dynamic CLR objects at runtime without needing to modify the class itself. It can be understand just as a dictionary, where both the keys and the values are weakly referenced, and a value is kept alive as long as the key is alive. The key is not kept alive by the ConditionalWeakTable, unlike a `Dictionary`. Unlike `WeakReference`, set the value to null will not make the value get garbage collected if the key object is still alive. It is fully thread-safe.
+
+The class is used to implement the dependency property mechanism used by XAML. DLR use it to implement dynamic languages on the .NET runtime. Also can be useful when need to track memory leaks.
+ 
+- Caveat 1: **Restrictions on TKey**. Be careful what type you specify for TKey. I stronly recommend that you only use types that use `reference equality`. This means that I don’t recommend you use `string`. `string` not only uses value equality, but also has a complex *interning* feature. Remember, `ConditionalWeakTable` tracks object **instances**, not object **values**.
+- Caveat 2: **IDisposable is ignored on TValue**. `ConditionalWeakTable` will **not** dispose any `IDisposable` values attached to object instances. They will (eventally) be finalized, but the standard restrictions on finalizers apply.
+
+http://connectedproperties.codeplex.com/
