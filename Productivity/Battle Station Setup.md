@@ -10,6 +10,8 @@ Notepad++ https://notepad-plus-plus.org/
 
 Xshell https://www.netsarang.com/products/xsh_overview.html
 
+Xftp https://www.netsarang.com/products/xfp_overview.html
+
 Cmder http://cmder.net/
 
 Gow https://github.com/bmatzelle/gow
@@ -30,7 +32,7 @@ MarkdownPad http://markdownpad.com/
 
 Visual Studio Code https://code.visualstudio.com/
 
-dotPeek https://www.jetbrains.com/decompiler/
+ILSpy http://ilspy.net/
 
 Anaconda https://www.continuum.io/downloads
 
@@ -44,7 +46,7 @@ scoop http://scoop.sh/
 
 snipaste http://zh.snipaste.com/
 
-#### VS Plugins
+## Visual Studio Extensions
 * VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
 * XAML Magic https://visualstudiogallery.msdn.microsoft.com/0d682c2e-3c5e-4f0e-8b54-d37ecb25eb7e
 * Configuration Transform https://visualstudiogallery.msdn.microsoft.com/579d3a78-3bdd-497c-bc21-aa6e6abbc859
@@ -61,6 +63,6 @@ snipaste http://zh.snipaste.com/
 * C# Analyzers and Refactorings https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
 * Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
 * Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
-* ConEmuIntegration https://visualstudiogallery.msdn.microsoft.com/a0536370-40e4-4141-8f51-5f00d0434012
 * Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
 * XAML Power Toys https://visualstudiogallery.msdn.microsoft.com/2abb43bb-350b-4f2c-bc0f-a8262a0094d3
+* Web Extension Pack https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459
