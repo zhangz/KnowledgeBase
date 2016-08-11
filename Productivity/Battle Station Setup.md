@@ -1,49 +1,28 @@
 ## Battle Station Setup
 
 7-Zip http://www.7-zip.org/
-
 XYplorer https://www.xyplorer.com/free.php
-
 Everything http://www.voidtools.com/
-
 Notepad++ https://notepad-plus-plus.org/
-
 Xshell https://www.netsarang.com/products/xsh_overview.html
-
 Xftp https://www.netsarang.com/products/xfp_overview.html
-
 Cmder http://cmder.net/
-
 Gow https://github.com/bmatzelle/gow
-
 oh-my-posh https://github.com/janjoris/oh-my-posh/
-
 GitHub Desktop https://desktop.github.com/
-
 GitKraken https://www.gitkraken.com/
-
 Git Extensions http://gitextensions.github.io/
-
 LINQPad http://www.linqpad.net/
-
 RoslynPad https://roslynpad.net/
-
 MarkdownPad http://markdownpad.com/
-
 Visual Studio Code https://code.visualstudio.com/
-
 ILSpy http://ilspy.net/
-
+Gistlyn http://gistlyn.com/
 Anaconda https://www.continuum.io/downloads
-
 f.lux https://justgetflux.com/
-
 NimbleText http://nimbletext.com/
-
 TailBlazer https://github.com/RolandPheasant/TailBlazer
-
 scoop http://scoop.sh/
-
 snipaste http://zh.snipaste.com/
 
 ## Visual Studio Extensions
@@ -66,3 +45,9 @@ snipaste http://zh.snipaste.com/
 * Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
 * XAML Power Toys https://visualstudiogallery.msdn.microsoft.com/2abb43bb-350b-4f2c-bc0f-a8262a0094d3
 * Web Extension Pack https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459
+
+## Chrome Extensions
+Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
+Postman https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+Save to Pocket https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj
+Smartshot https://chrome.google.com/webstore/detail/smartshot-screen-capture/edjbamdongkhmagbpppagfjbcojajeae
