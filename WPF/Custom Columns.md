@@ -28,6 +28,8 @@ http://stackoverflow.com/questions/704724/programatically-add-column-rows-to-wpf
 
 https://web.archive.org/web/20120419005554/http://lucidsnippets.com/blog/dynamic-wpf-datagrid-columns-using-propertydescriptors
 
+https://jopinblog.wordpress.com/2007/05/12/dynamic-propertydescriptors-with-anonymous-methods/
+
 http://www.shujaat.net/2012/09/dynamically-generated-properties-using.html
 
 ## Approach 2
