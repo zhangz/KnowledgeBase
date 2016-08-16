@@ -1,53 +1,53 @@
 ## Battle Station Setup
-
-7-Zip http://www.7-zip.org/
-XYplorer https://www.xyplorer.com/free.php
-Everything http://www.voidtools.com/
-Notepad++ https://notepad-plus-plus.org/
-Xshell https://www.netsarang.com/products/xsh_overview.html
-Xftp https://www.netsarang.com/products/xfp_overview.html
-Cmder http://cmder.net/
-Gow https://github.com/bmatzelle/gow
-oh-my-posh https://github.com/janjoris/oh-my-posh/
-GitHub Desktop https://desktop.github.com/
-GitKraken https://www.gitkraken.com/
-Git Extensions http://gitextensions.github.io/
-LINQPad http://www.linqpad.net/
-RoslynPad https://roslynpad.net/
-MarkdownPad http://markdownpad.com/
-Visual Studio Code https://code.visualstudio.com/
-ILSpy http://ilspy.net/
-Gistlyn http://gistlyn.com/
-Anaconda https://www.continuum.io/downloads
-f.lux https://justgetflux.com/
-NimbleText http://nimbletext.com/
-TailBlazer https://github.com/RolandPheasant/TailBlazer
-scoop http://scoop.sh/
-snipaste http://zh.snipaste.com/
+- 7-Zip http://www.7-zip.org/
+- XYplorer https://www.xyplorer.com/free.php
+- Everything http://www.voidtools.com/
+- Notepad++ https://notepad-plus-plus.org/
+- Xshell https://www.netsarang.com/products/xsh_overview.html
+- Xftp https://www.netsarang.com/products/xfp_overview.html
+- Cmder http://cmder.net/
+- Gow https://github.com/bmatzelle/gow
+- oh-my-posh https://github.com/janjoris/oh-my-posh/
+- GitHub Desktop https://desktop.github.com/
+- GitKraken https://www.gitkraken.com/
+- Git Extensions http://gitextensions.github.io/
+- LINQPad http://www.linqpad.net/
+- RoslynPad https://roslynpad.net/
+- MarkdownPad http://markdownpad.com/
+- Visual Studio Code https://code.visualstudio.com/
+- dotPeek https://www.jetbrains.com/decompiler/
+- JustDecompile (plugin support) http://www.telerik.com/products/decompiler.aspx
+- Gistlyn http://gistlyn.com/
+- Anaconda https://www.continuum.io/downloads
+- f.lux https://justgetflux.com/
+- NimbleText http://nimbletext.com/
+- TailBlazer https://github.com/RolandPheasant/TailBlazer
+- scoop http://scoop.sh/
+- snipaste http://zh.snipaste.com/
 
 ## Visual Studio Extensions
-* VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
-* XAML Magic https://visualstudiogallery.msdn.microsoft.com/0d682c2e-3c5e-4f0e-8b54-d37ecb25eb7e
-* Configuration Transform https://visualstudiogallery.msdn.microsoft.com/579d3a78-3bdd-497c-bc21-aa6e6abbc859
-* Disable Solution Explorer's Dynamic Nodes https://visualstudiogallery.msdn.microsoft.com/62461a72-4255-4eac-a630-52758e9c3723
-* File Nesting https://visualstudiogallery.msdn.microsoft.com/3ebde8fb-26d8-4374-a0eb-1e4e2665070c
-* Smooth Scroll https://visualstudiogallery.msdn.microsoft.com/30b1f9a2-845d-48f2-aafc-98ece8817a87
-* Learn the Shortcut https://visualstudiogallery.msdn.microsoft.com/29f07f2c-68aa-47fa-b1c3-48065209b110
-* Open in Notepad++ https://visualstudiogallery.msdn.microsoft.com/4f30cefe-1ca0-4b71-9ec8-03c6ef1114c3
-* Open Command Line https://visualstudiogallery.msdn.microsoft.com/4e84e2cf-2d6b-472a-b1e2-b84932511379
-* ReAttach https://visualstudiogallery.msdn.microsoft.com/8cccc206-b9de-42ef-8f5a-160ad0f017ae
-* BuildVision https://visualstudiogallery.msdn.microsoft.com/23d3c821-ca2d-4e1a-a005-4f70f12f77ba
-* Clr Heap Allocation Analyzer https://visualstudiogallery.msdn.microsoft.com/f9b47b93-8675-4ae0-9c52-5da8027c4bb8
-* Refactoring Essentials for Visual Studio https://visualstudiogallery.msdn.microsoft.com/68c1575b-e0bf-420d-a94b-1b0f4bcdcbcc
-* C# Analyzers and Refactorings https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
-* Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
-* Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
-* Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
-* XAML Power Toys https://visualstudiogallery.msdn.microsoft.com/2abb43bb-350b-4f2c-bc0f-a8262a0094d3
-* Web Extension Pack https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459
+- VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
+- XAML Magic https://visualstudiogallery.msdn.microsoft.com/0d682c2e-3c5e-4f0e-8b54-d37ecb25eb7e
+- Configuration Transform https://visualstudiogallery.msdn.microsoft.com/579d3a78-3bdd-497c-bc21-aa6e6abbc859
+- Disable Solution Explorer's Dynamic Nodes https://visualstudiogallery.msdn.microsoft.com/62461a72-4255-4eac-a630-52758e9c3723
+- File Nesting https://visualstudiogallery.msdn.microsoft.com/3ebde8fb-26d8-4374-a0eb-1e4e2665070c
+- Smooth Scroll https://visualstudiogallery.msdn.microsoft.com/30b1f9a2-845d-48f2-aafc-98ece8817a87
+- Learn the Shortcut https://visualstudiogallery.msdn.microsoft.com/29f07f2c-68aa-47fa-b1c3-48065209b110
+- Open in Notepad++ https://visualstudiogallery.msdn.microsoft.com/4f30cefe-1ca0-4b71-9ec8-03c6ef1114c3
+- Open Command Line https://visualstudiogallery.msdn.microsoft.com/4e84e2cf-2d6b-472a-b1e2-b84932511379
+- ReAttach https://visualstudiogallery.msdn.microsoft.com/8cccc206-b9de-42ef-8f5a-160ad0f017ae
+- BuildVision https://visualstudiogallery.msdn.microsoft.com/23d3c821-ca2d-4e1a-a005-4f70f12f77ba
+- Clr Heap Allocation Analyzer https://visualstudiogallery.msdn.microsoft.com/f9b47b93-8675-4ae0-9c52-5da8027c4bb8
+- Refactoring Essentials for Visual Studio https://visualstudiogallery.msdn.microsoft.com/68c1575b-e0bf-420d-a94b-1b0f4bcdcbcc
+- C# Analyzers and Refactorings https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
+- Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
+- Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
+- Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
+- XAML Power Toys https://visualstudiogallery.msdn.microsoft.com/2abb43bb-350b-4f2c-bc0f-a8262a0094d3
+- Web Extension Pack https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459
 
 ## Chrome Extensions
-Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
-Postman https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
-Save to Pocket https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj
-Smartshot https://chrome.google.com/webstore/detail/smartshot-screen-capture/edjbamdongkhmagbpppagfjbcojajeae
+- Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
+- Postman https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+- Save to Pocket https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj
+- Smartshot https://chrome.google.com/webstore/detail/smartshot-screen-capture/edjbamdongkhmagbpppagfjbcojajeae
