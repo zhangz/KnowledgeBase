@@ -214,6 +214,8 @@ Object pooling can provide a performance boost if the allocation and deallocatio
 
 An example: http://referencesource.microsoft.com/#System.ServiceModel/System/ServiceModel/Channels/BufferManager.cs,2d794266eb592bf0
 
+https://github.com/microsoft/microsoft.io.recyclablememorystream
+
 Implementing an efficient pool requires taking at least the following factors into consideration:
 - Synchronization around the allocation and deallocation operations must be kept to a
 minimum. For example, a lock-free (wait-free) data structure could be used to implement

@@ -16,3 +16,9 @@ Ref: http://theburningmonk.com/2011/03/hashset-vs-list-vs-dictionary/
 ## HybridDictionary
 
 Implements `IDictionary` by using a `ListDictionary` while the collection is small, and then switching to a `Hashtable` when the collection gets large.
+
+## Dictionary vs IDictionary 
+Avoid enumeration allocation via interface. Enumerating Dictionary doesn't allocate; however enumerating via the IDictionary interface causes a lot of extra allocations. When accessed via the interface, you're using the interface method that's typed to return `IEnumerator<KeyValuePair<TKey,TValue>>` rather than `Dictionary<TKey, TValue>.Enumerator`, so the struct gets boxed.
+
+http://mattwarren.org/2016/02/17/adventures-in-benchmarking-memory-allocations/
+
