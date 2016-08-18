@@ -24,8 +24,9 @@ http://visualstudioshortcuts.com/2015/
 - Ctrl+M, Ctrl+X：展开所有
 - Ctrl+M, Ctrl+H：Hide Selection
 - Ctrl+M, Ctrl+U：Stop Hiding Current
-- Ctrl+,：Press Ctrl+, and start typing. It searches files, members, type...everything. And you can navigate around with your keyboard before you hit enter.
+- Ctrl+,：Navigate/GoTo is a smart search feature that allows you to easily navigate to any file, class, member, or symbol in the solution.
 - Ctrl+;：search all the the nodes in Solution Explorer.
 - Ctrl+Q：Quick Launch
 - Alt-up/down：move lines. You can also Shift-Select a bunch of lines and then Alt-Arrow them around as a group.
 - ALT+SHIFT+上下左右键，或者ALT+鼠标Drag：框选Square Selection，drag yourself a nice rectangle...then start typing to type on a dozen lines at once.
+- Alt+F12：Peek to definition. If you have installed Productivity Power Tools, Control-Click GoToDefinition will default to using this peek window
