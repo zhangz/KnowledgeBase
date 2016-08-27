@@ -24,6 +24,7 @@
 - TailBlazer https://github.com/RolandPheasant/TailBlazer
 - scoop http://scoop.sh/
 - snipaste http://zh.snipaste.com/
+- .NET assembly editor, decompiler, and debugger https://github.com/0xd4d/dnSpy
 
 ## Visual Studio Extensions
 - VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
@@ -51,3 +52,4 @@
 - Postman https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 - Save to Pocket https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj
 - Smartshot https://chrome.google.com/webstore/detail/smartshot-screen-capture/edjbamdongkhmagbpppagfjbcojajeae
+
