@@ -1,4 +1,6 @@
 ## Battle Station Setup
+https://hodgkins.io/ultimate-powershell-prompt-and-git-setup
+
 - 7-Zip http://www.7-zip.org/
 - XYplorer https://www.xyplorer.com/free.php
 - Everything http://www.voidtools.com/
