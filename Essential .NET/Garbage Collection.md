@@ -6,9 +6,11 @@ C#'s `new` operator causes the CLR to perform several steps.
 ### Managed Heap
 There is a managed heap for each managed process. All threads in the process allocate memory for objects on the same heap.
 
-The heap can be considered as the accumulation of two heaps
-- The large object heap 
-- The small object heap.
+The CLR manages two separate heaps for allocation
+- The large object heap (LOH)
+- The small object heap (SOH)
+
+Small .NET objects are allocated onto the SOH. There are three of these: Generation 0, Generation 1, and Generation 2. Objects move up these Generations based on their age.
 
 ### Generations
 ​The managed heap is partitioned into three regions:
@@ -21,21 +23,26 @@ A typical starting budget for generation 1 ranges from 512 KB-4 MB. Objects in g
 
 ##### Generation 2
 Surviving objects from generation 1 are promoted to generation 2. This promotion reflects the fact that they are now considered old objects. The size of generation 2 can extend the entire memory space dedicated for the OS process, i.e., up to 2 GB of memory on a 32-bit system, or up to 8 TB of memory on a 64-bit system.
+
 One of the primary risks in generational model is that temporary objects creep into generation 2 and die shortly afterwards; this is the **mid-life crisis**. It is extremely important to ensure that temporary objects do not reach generation 2.
+
+​If you see a high proportion of memory in Gen 2, it's an indicator that memory is being held onto for a long time, and that you may have a memory problem. 
 ​
 ### Large Object Heap (LOH)
 It ​is a special area reserved for large objects. Large objects are objects that occupy more than 85KB of memory. This threshold applies to the object itself, and not to the size of the entire object graph rooted at the object, so that an array of 1,000 strings (each 100 characters in size) is not a large object because the array itself contains only 4-byte or 8-byte references to the strings, but an array of 50,000 integers is a large object.
 ​
-The LOH is collected when the threshold for a collection in generation 2 is reached.
+LOH is only collected during a generation 2 collection. Large objects are GC’ed at every Gen2 GC even when the GC was not triggered by lack of space in LOH. Note that there isn’t a GC that only collects large objects.
 
 The CLR treats large objects slightly differently than how it treats small objects:
 - Large objects are not allocated within the same address space as small objects, they ​are allocated from the LOH directly
 - The GC doesn't compact large objects because of the time it would require to move them in memory.
 - Large objects are immediately considered to be part of generation 2; they are never in generation 0 or 1.
 
+**.NET 4.5.1 now supports compacting the LOH, `GCSettings.LargeObjectHeapCompactionMode` property.**
+
 Usually large objects are large strings (like XML or JSON) or byte arrays that you use for I/O operations, such as reading bytes from a file or network into a buffer so you can process it.
 
-One effective strategy is **pooling large objects** and reusing them instead of releasing them to the GC. The cost of maintaining the pool might be smaller than the cost of performing full collections. Another possible approach (if arrays of the same type are involved) is allocating a very large object and manually breaking it into chunks as they are needed.
+One effective strategy is **pooling large objects** and reusing them instead of releasing them to the GC. Since fewer allocations and collections take place on the LOH, fragmentation is less likely to occur and the program’s performance is likely to improve. The cost of maintaining the pool might be smaller than the cost of performing full collections. Another possible approach (if arrays of the same type are involved) is allocating a very large object and manually breaking it into chunks as they are needed.
 
 ## Garbage Collection
 The CLR uses a **reference tracking algorithm** instead of reference counting algorithm which cannot handle circular references well. This algorithm only cares about reference type variables, because only these variables can refer to an object on the heap. Value type variables contain the value type instance directly.
@@ -69,7 +76,7 @@ A static field keeps whatever object it refers to forever or until the AppDomain
 We do not need the local reference to remain an active root until the end of its enclosing method. For example, after a xml document was loaded and displayed, we might want to introduce additional code within the same method that no longer requires the document to be kept in memory. This code might take a long time to complete, and if a garbage collection occurs in the meantime, we would like the document’s memory to be reclaimed. Garbage collector provides this **eager root collection** facility. So breaking your code into smaller methods and using less local variables is not just a good design measure or a software engineering technique. With the .NET garbage collector, it can provide a performance benefit as well because you have less local roots! It means less work for the JIT when compiling the method, less space to be occupied by the root IP tables, and less work for the GC when performing its stack walk.
 
 ### Garbage Collection Algorithm
-When the CLR starts a GC, the CLR first suspend all threads in the process (not true in concurrent GC). Then the CLR performs the **mark phase** of the GC, during which it resolves all objects that are still referenced by the application (live objects). The GC will set a bit in the sync block index field of an object in order to prevents infinite loop from occurring in the case where you havea circular reference. Now that the CLR knows which objects must survive and which objects can be deleted, ​the collector moves to the **sweep phase**, at which time it reclaims the space occupied by unused objects.​ Finally, the collector concludes with the **compact phase**, in which it shifts live objects so that they remain consecutive in memory. After the compaction phase is complete, the CLR resumes all the application's threads. 
+When the CLR starts a GC, the CLR first suspend all threads in the process (not true in concurrent GC). Then the CLR performs the **mark phase** of the GC, during which it resolves all objects that are still referenced by the application (live objects). The GC will set a bit in the sync block index field of an object in order to prevents infinite loop from occurring in the case where you havea circular reference. Now that the CLR knows which objects must survive and which objects can be deleted, ​the collector moves to the **sweep phase**, at which time it reclaims the space occupied by unused objects.​ Finally, the collector concludes with the **compact phase**, in which it shifts live objects so that they remain consecutive in memory (makes the CPU cache much more efficient). After the compaction phase is complete, the CLR resumes all the application's threads. 
 
 **Mark phase** can be concurrent:
 - False negative

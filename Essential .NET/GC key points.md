@@ -1,9 +1,18 @@
 ## When - 什么时候触发？
 Garbage collections occur whenever generation 0 is full.
 Partial/full GC的触发条件 - gen 0, gen 1, gen 2, large object heap, GC.Collect(), low memory
-OOM的触发条件
+Full GC: Gen0, Gen1, Gen2 and LOH
+OOM的触发条件: fragmentation in LOH
 减少GC次数的优化策略 - object pool, value type, dispose
 mid-life crisis
+
+Small .NET objects are allocated onto the Small Object Heaps (SOH). There are three of these: Generation 0, Generation 1, and Generation 2. Objects move up these Generations based on their age.
+
+New objects are placed on Gen 0. When Gen 0 becomes full, the .NET Garbage Collector (GC) runs, disposing of objects which are no longer needed and moving everything else up to Gen 1. If Gen 1 becomes full the GC runs again, but also moves objects in Gen 1 up to Gen 2.
+
+A full GC run happens when Gen 2 becomes full. This clears unneeded Gen 2 objects, moves Gen 1 objects to Gen 2, then moves Gen 0 objects to Gen 1, and finally clears anything which isn't referenced. After each GC run, the affected heaps are compacted, to keep memory which is still in use together.
+
+Objects larger than 85 KB are allocated onto the Large Object Heap (LOH). 
 
 ## What - 回收什么？
 从gc root搜索不到，而且经过第一次标记、清理后，仍然没有复活的对象
