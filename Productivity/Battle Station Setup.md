@@ -24,6 +24,7 @@
 - TailBlazer https://github.com/RolandPheasant/TailBlazer
 - scoop http://scoop.sh/
 - snipaste http://zh.snipaste.com/
+- A multi-tabbed SSH client with SCP support http://smartty.sysprogs.com/
 
 ## Visual Studio Extensions
 - VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
