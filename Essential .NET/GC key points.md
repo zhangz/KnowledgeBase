@@ -33,5 +33,15 @@ GC Mode
 Suspend other threads？
 Finalizer
 
+## Object Size Limitation
+There is a 2GB maximum single object restriction in the .NET CLR, even in 64bit. This is by design.
+.NET 4.5 has the option in x64 to explicitly allow objects to be larger than 2GB by setting `gcAllowVeryLargeObjects` in the app.config. With this new option, it is possible to get `UInt32.MaxValue` elements in a multi-dimensional array, though a single dimensional array is still limited to 2,146,435,071 elements (2,147,483,591 for single byte arrays or arrays of a struct containing nothing ut a byte).
+
+The new rules with this option are:
+
+- The maximum number of elements in an array is `UInt32.MaxValue`.
+- The maximum index in any single dimension is 2,147,483,591 (0x7FFFFFC7) for byte arrays and arrays of single-byte structures, and 2,146,435,071 (0X7FEFFFFF) for other types.
+- The maximum size for strings and other non-array objects is unchanged.
+
 
 
