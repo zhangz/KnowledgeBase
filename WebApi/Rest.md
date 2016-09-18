@@ -39,8 +39,6 @@ RPC style API treats HTTP as a transport protocol for invoking functions running
 ## REST
 Resource oriented. API exposes one or more resources, which each support one or more HTTP methods. These APIs offer rich interactions over HTTP, supporting capabilities like caching and content negotiation.
 
-http://www.ruanyifeng.com/blog/2011/09/restful.html
-
 ## REST vs. SOAP RPC
 
 #### SOAP
@@ -135,4 +133,6 @@ REST define the following constraints:
 - Layered system
 - Code on demand
 
+http://www.ruanyifeng.com/blog/2011/09/restful.html
+http://restcookbook.com/
 
