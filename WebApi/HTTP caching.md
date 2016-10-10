@@ -2,6 +2,9 @@ For HTTP caching to work, client and server need to work in tandem. Server needs
 
 Server-side caching according to HTTP spec: includes inspecting headers, generating ETag and adding headers, responding to conditional GET and PUT, etc.
 
+If you use HttpClient out of the box, it will not implement any caching even though the resources are cacheable. Also all of the work for conditional GET or PUT calls (using if-none-match, etc) or cache validation (if there is must-revalidate) or checking whether your cache is stale has to be done in your own code. 
+CacheCow (https://github.com/aliostad/CacheCow) is an HTTP caching library for client and server in ASP.NET Web API that does all of above.
+
 ASP.NET Web API exposes full goodness of the HTTP spec and caching can be implemented as a message handler.
 
 ## Background
@@ -47,6 +50,5 @@ Server: Microsoft-IIS/8.0
 Date: Sun, 24 Jun 2012 07:34:29 GMT
 ```
 
-- https://github.com/aliostad/CacheCow
 - http://byterot.blogspot.co.uk/2012/03/aspnet-web-api-series.html
 - http://byterot.blogspot.co.uk/2012/04/web-api-governance-life-in-schemaless.html
