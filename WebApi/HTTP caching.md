@@ -1,9 +1,20 @@
+In HTTP Caching, a cacheable resource (or HTTP response in simple terms) gets cached on the CLIENT (and not server). Server is responsible for defining cache policy, expiry and maintaining resource metadata (e.g. ETag, LastModified). Client on the other hand is responsible for actually caching the response, respecting cache expiry directives and validating expired resources.
+
+The beauty of the HTTP caching is that your server will not even be hit when client has cached a resource. This helps with minimising the scalability, reducing network traffic and allowing for offline client implementation.
+
+One of the fundamental differences of HTTP caching with other types of caching is that a STALE (or expired) resource is not necessarily unusable and does not get removed automatically. Instead client call server and check if the stale resource is still good to use. If it is, server responds with status 304 (NotModified) otherwise it sends back the new response.
+
+HTTP Caching mechanism can also be used for solving concurrency problems. When a client wants to update a resource (usually using PUT), it can send a conditional call and ask for update to run if and only if the version of the server is the same as the version of the client (based on its ETag or LastModified). This is especially useful with modern distributed systems.
+
 For HTTP caching to work, client and server need to work in tandem. Server needs to return with each resource, a Cache-Control header, an ETag or a LastModified and the client needs to use these parameters in its future conditional requests with If-Modified-Since or If-None-Match. 
 
 Server-side caching according to HTTP spec: includes inspecting headers, generating ETag and adding headers, responding to conditional GET and PUT, etc.
 
 If you use HttpClient out of the box, it will not implement any caching even though the resources are cacheable. Also all of the work for conditional GET or PUT calls (using if-none-match, etc) or cache validation (if there is must-revalidate) or checking whether your cache is stale has to be done in your own code. 
-CacheCow (https://github.com/aliostad/CacheCow) is an HTTP caching library for client and server in ASP.NET Web API that does all of above.
+
+CacheCow is an HTTP caching library for client and server in ASP.NET Web API that does all of above.
+- https://github.com/aliostad/CacheCow
+- http://byterot.blogspot.co.uk/2012/09/asp-net-web-api-consumption-cachecow-client.html
 
 ASP.NET Web API exposes full goodness of the HTTP spec and caching can be implemented as a message handler.
 
