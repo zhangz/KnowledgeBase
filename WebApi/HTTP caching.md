@@ -47,6 +47,6 @@ Server: Microsoft-IIS/8.0
 Date: Sun, 24 Jun 2012 07:34:29 GMT
 ```
 
-https://github.com/aliostad/CacheCow
-http://byterot.blogspot.co.uk/2012/05/aspnet-web-api-series-messagehandler.html
-http://byterot.blogspot.co.uk/2012/05/aspnet-web-api-messagehandler-real.html
+- https://github.com/aliostad/CacheCow
+- http://byterot.blogspot.co.uk/2012/03/aspnet-web-api-series.html
+- http://byterot.blogspot.co.uk/2012/04/web-api-governance-life-in-schemaless.html
