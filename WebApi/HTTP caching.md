@@ -2,8 +2,6 @@ For HTTP caching to work, client and server need to work in tandem. Server needs
 
 Server-side caching according to HTTP spec: includes inspecting headers, generating ETag and adding headers, responding to conditional GET and PUT, etc.
 
-The client has to do some work to do. It has to use If-None-Match with the ETag to conditionally ask for the resource: if it matches server, it will get back 304 but if not, server will return the new resource:
-
 ASP.NET Web API exposes full goodness of the HTTP spec and caching can be implemented as a message handler.
 
 ## Background
@@ -20,6 +18,7 @@ ETag for the same resource could be different according to various headers. For 
 
 Cache validation for GET and PUT requests are similar but instead will use If-Match (for PUT) and If-None-Match (for GET).
 
+For example, we make request and get back this response (or similar; some headers removed and body truncated for clarity):
 ```
 HTTP/1.1 200 OK
 ETag: "54e9a75f2dbb4edca672f7a2c4a73dca"
@@ -29,6 +28,23 @@ Last-Modified: Thu, 21 Jun 2012 23:35:46 GMT
 Content-Type: application/json; charset=utf-8
 
 [{"Id":1,"Make":"Vauxhall","Model":"Astra","BuildYear":1997,"Price":175.0....
+```
+The client has to do some work to do. It has to use If-None-Match with the ETag to conditionally ask for the resource: if it matches server, it will get back 304 but if not, server will return the new resource:
+```
+GET http://localhost:8031/api/Cars HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:8031
+If-None-Match: "54e9a75f2dbb4edca672f7a2c4a73dca"
+```
+Here we get back 304 (Not modified) as expected:
+```
+HTTP/1.1 304 Not Modified
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: -1
+ETag: "54e9a75f2dbb4edca672f7a2c4a73dca"
+Server: Microsoft-IIS/8.0
+Date: Sun, 24 Jun 2012 07:34:29 GMT
 ```
 
 https://github.com/aliostad/CacheCow
