@@ -71,3 +71,7 @@ Date: Sun, 24 Jun 2012 07:34:29 GMT
 - https://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/
 - http://byterot.blogspot.co.uk/2012/03/aspnet-web-api-series.html
 - http://byterot.blogspot.co.uk/2012/04/web-api-governance-life-in-schemaless.html
+
+Browser Caching 缓存静态资源
+- https://developers.google.com/speed/docs/insights/LeverageBrowserCaching
+- https://varvy.com/pagespeed/leverage-browser-caching.html
