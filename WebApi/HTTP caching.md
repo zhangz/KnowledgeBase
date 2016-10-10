@@ -32,6 +32,12 @@ ETag for the same resource could be different according to various headers. For 
 
 Cache validation for GET and PUT requests are similar but instead will use If-Match (for PUT) and If-None-Match (for GET).
 
+#### Caching Method
+- Last-Modified
+- ETag
+- Expires
+- Max-Age
+
 For example, we make request and get back this response (or similar; some headers removed and body truncated for clarity):
 ```
 HTTP/1.1 200 OK
@@ -61,5 +67,7 @@ Server: Microsoft-IIS/8.0
 Date: Sun, 24 Jun 2012 07:34:29 GMT
 ```
 
+- https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
+- https://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/
 - http://byterot.blogspot.co.uk/2012/03/aspnet-web-api-series.html
 - http://byterot.blogspot.co.uk/2012/04/web-api-governance-life-in-schemaless.html
