@@ -272,8 +272,10 @@ Calling `Dispose()` does **not** trigger a GC and the GC **never** calls `Dispos
 
 ## References
 Chapter 21 - Working with Type Requiring Special Cleanup, CLR via C#.
-http://stackoverflow.com/questions/7520881/is-it-bad-practice-to-depend-on-the-net-automated-garbage-collector
-http://stackoverflow.com/questions/4267729/what-happens-if-i-dont-call-dispose-on-the-pen-object/5555243#5555243
-http://dave-black.blogspot.jp/2011/03/how-do-you-properly-implement.html
-http://blogs.microsoft.co.il/blogs/sasha/archive/2010/06/30/sta-objects-and-the-finalizer-thread-tale-of-a-deadlock.aspx
-https://blogs.msdn.microsoft.com/blambert/2009/07/24/a-simple-and-totally-thread-safe-implementation-of-idisposable/
+- http://stackoverflow.com/questions/7520881/is-it-bad-practice-to-depend-on-the-net-automated-garbage-collector
+- http://stackoverflow.com/questions/4267729/what-happens-if-i-dont-call-dispose-on-the-pen-object/5555243#5555243
+- http://dave-black.blogspot.jp/2011/03/how-do-you-properly-implement.html
+- http://blogs.microsoft.co.il/blogs/sasha/archive/2010/06/30/sta-objects-and-the-finalizer-thread-tale-of-a-deadlock.aspx
+- https://blogs.msdn.microsoft.com/blambert/2009/07/24/a-simple-and-totally-thread-safe-implementation-of-idisposable/
+- http://blog.stephencleary.com/2009/08/first-rule-of-implementing-idisposable.html
+- https://www.zhihu.com/question/51592470
