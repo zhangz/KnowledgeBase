@@ -279,3 +279,4 @@ Chapter 21 - Working with Type Requiring Special Cleanup, CLR via C#.
 - https://blogs.msdn.microsoft.com/blambert/2009/07/24/a-simple-and-totally-thread-safe-implementation-of-idisposable/
 - http://blog.stephencleary.com/2009/08/first-rule-of-implementing-idisposable.html
 - https://www.zhihu.com/question/51592470
+- https://ericlippert.com/2015/05/18/when-everything-you-know-is-wrong-part-one/
