@@ -280,3 +280,4 @@ Chapter 21 - Working with Type Requiring Special Cleanup, CLR via C#.
 - http://blog.stephencleary.com/2009/08/first-rule-of-implementing-idisposable.html
 - https://www.zhihu.com/question/51592470
 - https://ericlippert.com/2015/05/18/when-everything-you-know-is-wrong-part-one/
+- https://blogs.msdn.microsoft.com/maoni/2004/11/04/clearing-up-some-confusion-over-finalization-and-other-areas-in-gc/
