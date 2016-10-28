@@ -42,6 +42,7 @@
 - Clr Heap Allocation Analyzer https://visualstudiogallery.msdn.microsoft.com/f9b47b93-8675-4ae0-9c52-5da8027c4bb8
 - Refactoring Essentials for Visual Studio https://visualstudiogallery.msdn.microsoft.com/68c1575b-e0bf-420d-a94b-1b0f4bcdcbcc
 - C# Analyzers and Refactorings https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
+- Roslynator https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
 - Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
 - Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
 - Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
