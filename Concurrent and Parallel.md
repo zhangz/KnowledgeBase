@@ -5,7 +5,7 @@
 
 Paul Butcher在他的《Seven Concurrency Models in Seven Weeks 》里开篇就谈到：
 
-An alternative way of thinking about this is that concurrency is an aspect of the problem domain—your program needs to handle multiple simultaneous (or near-simultaneous) events. Parallelism, by contrast, is an aspect of the solution domain—you want to make your program faster by processing different portions of the problem in parallel
+An alternative way of thinking about this is that concurrency is an aspect of the problem domain — your program needs to handle multiple simultaneous (or near-simultaneous) events. Parallelism, by contrast, is an aspect of the solution domain — you want to make your program faster by processing different portions of the problem in parallel
 
 也就是说，并发是问题域，并行是解决域。问题是并发的，解决方法是并行的。
 
@@ -14,8 +14,9 @@ An alternative way of thinking about this is that concurrency is an aspect of th
 Rob是Go语言之父，《The Unix Programming Environment》 和 《The Practice of Programming》（最近正在重读这本小册子）的作者。他有一个经典的解释：
 
 Concurrency is about dealing with lots of things at once.
-
+并发是同一时间应对多件事情的能力。
 Parallelism is about doing lots of things at once.
+并行是同一时间做多件事情的能力。
 
 嘿嘿，这个有点意思，不过只能意会了。
 
@@ -54,4 +55,28 @@ yebangyu是博主，yebangyu.org公司CEO兼站长兼董事长兼老板，苦逼
 3，写书在取书名的时候需要区分。如果你是讲MPI、Open MP这类技术，建议用并行或者说Parallel Computing。如果是讲lock free、multi-thread这些共享内存编程的，建议用Concurrency或者Concurrency Programming。
 
 那么，Go语言这种CSP类型的Channel的呢？个人认为，都可以吧。
+
+## 其他
+
+并发的艺术：
+如果某个系统支持两个或者多个动作（Action）同时存在，那么这个系统就是一个并发系统。如果某个系统支持两个或者多个动作同时执行，那么这个系统就是一个并行系统。“并行”概念是“并发”概念的一个子集。也就是说，你可以编写一个拥有多个线程或者进程的并发程序，但如果没有多核处理器来执行这个程序，那么就不能以并行方式来运行代码。
+
+七周七并发模型:
+并发程序含有多个逻辑上的独立程序块，它们可以独立地并行执行，也可以串行执行。
+并行程序可以同时执行整个任务的多个部分。并行程序可能有多个独立执行块，也可能只有一个。
+并发是问题域中的概念：程序需要被设计成能够处理多个同时（或者几乎同时）发生的事件；并行则是方法域中的概念：通过将问题中的多个部分并行执行，来加速解决问题。
+并发是指同时有很多事要做，你可以串行处理也可以并行处理。
+并行是指同时做多件事。
+A concurrent program has multiple logical threads of control. These threads
+may or may not run in parallel.
+A parallel program potentially runs more quickly than a sequential program
+by executing different parts of the computation simultaneously (in parallel).
+It may or may not have more than one logical thread of control.
+
+并发：交替做不同事的能力，不同代码块交替执行
+并行：同时做不同事的能力，不同代码块同时执行
+
+并发就是指代码逻辑上可以并行，有并行的潜力，但是不一定当前是真的以物理并行的方式运行
+并发指的是代码的性质，并行指的是物理运行状态
+
 
