@@ -232,3 +232,4 @@ circumstances objects will be returned to the mercy of the garbage collector.
 - The pool should not be exhausted frequently, implying that a growth heuristic is needed
 to balance the pool size based on the frequency and amount of allocation requests.
 
+- https://github.com/mattwarren/gcvisualisation
