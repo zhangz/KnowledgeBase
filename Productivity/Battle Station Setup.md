@@ -57,3 +57,7 @@
 - Postman https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 - Save to Pocket https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj
 - Smartshot https://chrome.google.com/webstore/detail/smartshot-screen-capture/edjbamdongkhmagbpppagfjbcojajeae
+
+## Python
+- Python Setup on Mac http://sourabhbajaj.com/mac-setup/Python/README.html
+- Python Dev environment with Visual Studio Code https://lnx.azurewebsites.net/python-dev-environment-with-visual-studio-code-on-linux/
