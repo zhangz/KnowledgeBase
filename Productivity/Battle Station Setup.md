@@ -28,29 +28,29 @@
 - .NET assembly editor, decompiler, and debugger https://github.com/0xd4d/dnSpy
 
 ## Visual Studio Extensions
-- VSColorOutput https://www.visualstudiogallery.msdn.microsoft.com/f4d9c2b5-d6d7-4543-a7a5-2d7ebabc2496
-- XAML Magic https://visualstudiogallery.msdn.microsoft.com/0d682c2e-3c5e-4f0e-8b54-d37ecb25eb7e
-- Configuration Transform https://visualstudiogallery.msdn.microsoft.com/579d3a78-3bdd-497c-bc21-aa6e6abbc859
-- Disable Solution Explorer's Dynamic Nodes https://visualstudiogallery.msdn.microsoft.com/62461a72-4255-4eac-a630-52758e9c3723
-- File Nesting https://visualstudiogallery.msdn.microsoft.com/3ebde8fb-26d8-4374-a0eb-1e4e2665070c
-- Smooth Scroll https://visualstudiogallery.msdn.microsoft.com/30b1f9a2-845d-48f2-aafc-98ece8817a87
-- Learn the Shortcut https://visualstudiogallery.msdn.microsoft.com/29f07f2c-68aa-47fa-b1c3-48065209b110
-- Open in Notepad++ https://visualstudiogallery.msdn.microsoft.com/4f30cefe-1ca0-4b71-9ec8-03c6ef1114c3
-- Open Command Line https://visualstudiogallery.msdn.microsoft.com/4e84e2cf-2d6b-472a-b1e2-b84932511379
-- ReAttach https://visualstudiogallery.msdn.microsoft.com/8cccc206-b9de-42ef-8f5a-160ad0f017ae
-- BuildVision https://visualstudiogallery.msdn.microsoft.com/23d3c821-ca2d-4e1a-a005-4f70f12f77ba
-- Clr Heap Allocation Analyzer https://visualstudiogallery.msdn.microsoft.com/f9b47b93-8675-4ae0-9c52-5da8027c4bb8
-- Refactoring Essentials for Visual Studio https://visualstudiogallery.msdn.microsoft.com/68c1575b-e0bf-420d-a94b-1b0f4bcdcbcc
-- C# Analyzers and Refactorings https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
-- Roslynator https://visualstudiogallery.msdn.microsoft.com/e83c5e41-92c5-42a3-80cc-e0720c621b5e
-- Git Diff Margin https://visualstudiogallery.msdn.microsoft.com/cf49cf30-2ca6-4ea0-b7cc-6a8e0dadc1a8
-- Visual Studio Tools for Git https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c
-- Project Reference Context Menu Extension https://visualstudiogallery.msdn.microsoft.com/b2a3b8ac-2542-4415-91ed-daf4b0c9285b
-- XAML Power Toys https://visualstudiogallery.msdn.microsoft.com/2abb43bb-350b-4f2c-bc0f-a8262a0094d3
-- Web Extension Pack https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459
-- File Icons https://visualstudiogallery.msdn.microsoft.com/5e1762e8-a88b-417c-8467-6a65d771cc4e
-- Viasfora https://visualstudiogallery.msdn.microsoft.com/19609469-380e-4fcf-bcde-e31caeb658b2
-- Comment Remover https://visualstudiogallery.msdn.microsoft.com/845a87b1-3bd7-43a4-871d-0458d9fce206
+- VSColorOutput https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput
+- XAML Magic https://marketplace.visualstudio.com/items?itemName=DaveGrochocki.XAMLMagic
+- Configuration Transform https://marketplace.visualstudio.com/items?itemName=GolanAvraham.ConfigurationTransform
+- Disable Solution Explorer's Dynamic Nodes https://marketplace.visualstudio.com/items?itemName=MadsKristensen.DisableSolutionExplorersDynamicNodes
+- File Nesting https://marketplace.visualstudio.com/items?itemName=MadsKristensen.FileNesting
+- Smooth Scroll https://marketplace.visualstudio.com/items?itemName=lkytal.SmoothScroll
+- Learn the Shortcut https://marketplace.visualstudio.com/items?itemName=MadsKristensen.LearntheShortcut
+- Open in Notepad++ https://marketplace.visualstudio.com/items?itemName=CalvinAAllen.OpeninNotepad
+- Open Command Line https://marketplace.visualstudio.com/items?itemName=MadsKristensen.OpenCommandLine
+- ReAttach https://marketplace.visualstudio.com/items?itemName=ErlandR.ReAttach
+- BuildVision https://marketplace.visualstudio.com/items?itemName=AlekseyNagovitsyn.BuildVision
+- Clr Heap Allocation Analyzer https://marketplace.visualstudio.com/items?itemName=MukulSabharwal.ClrHeapAllocationAnalyzer
+- Refactoring Essentials for Visual Studio https://marketplace.visualstudio.com/items?itemName=SharpDevelopTeam.RefactoringEssentialsforVisualStudio
+- Roslynator https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator
+- Git Diff Margin https://marketplace.visualstudio.com/items?itemName=LaurentKempe.GitDiffMargin
+- Visual Studio Tools for Git https://marketplace.visualstudio.com/items?itemName=TFSPowerToolsTeam.VisualStudioToolsforGit
+- Project Reference Context Menu Extension https://marketplace.visualstudio.com/items?itemName=MatthewBurleigh.ProjectReferenceContextMenuExtension
+- XAML Power Toys https://marketplace.visualstudio.com/items?itemName=KarlShifflettkdawg.XAMLPowerToysforVisualStudio2015
+- Web Extension Pack https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebExtensionPack
+- File Icons https://marketplace.visualstudio.com/items?itemName=MadsKristensen.FileIcons
+- Viasfora https://marketplace.visualstudio.com/items?itemName=TomasRestrepo.Viasfora
+- Comment Remover https://marketplace.visualstudio.com/items?itemName=MadsKristensen.CommentRemover
+- AnyStatus https://marketplace.visualstudio.com/items?itemName=AlonAmsalem.AnyStatus
 
 ## Chrome Extensions
 - Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
