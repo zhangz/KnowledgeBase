@@ -17,6 +17,8 @@ http://visualstudioshortcuts.com/2015/
 - `Ctrl+K+F`：只整理你选中的部分
 - `Ctrl+L`：剪切当前行
 - `Ctrl+X`：剪切当前行
+- Whenever the cursor is at any position in the correct line, you can just use `CTRL+X` or `CTRL+C` and Visual Studio will AUTOMATICALLY cut or copy the entire line. No need to select the entire line.
+- Move lines: Just place the cursor anywhere in the line to be moved, hold the `ALT` key and use the cursors `UP` and `DOWN` to move the line
 - `Ctrl+Backspace`：删除上一个单词
 - `Ctrl+Del`：删除下一个单词
 - `Ctrl+M, Ctrl+M`：展开或折叠当前区域
