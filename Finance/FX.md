@@ -22,8 +22,10 @@
 
 #### Non-Deliverable Forwards(NDF)
 - NDF are contracts that involve no exchange of principal, are fixed at a pre-determined price, and are typically settled in USD (or sometimes, in the case of Eastern Europe, in EUR) at the prevailing spot exchange rate taken from an agreed source, at an agreed time, on an agreed future date.
-- 无本金交割远期：离岸金融衍生产品，确定远期汇率、期限和金额，合约到期时只需将远期汇率与实际汇率的差额进行交割清算（与本金金额、实际收支毫无关联）
+- 无本金交割远期外汇：其一般标的为非自由货币，结算的货币是自由兑换的货币，如美元。离岸金融衍生产品，确定远期汇率、期限和金额，合约到期时无需全额买卖，只需将远期汇率与实际汇率的差额进行交割清算，与本金金额、实际收支毫无关联。
 - 主要用于实行外汇管制国家的货币
+- 与外汇远期的差别：不用备有本金的收付，只要就到期日的市场汇率与合约协定的差价进行交割清算。远期外汇到期后需现汇交割。
+- http://wenku.baidu.com/link?url=s05Cu5Zf8ANhD6kuLCT5Yla2s_1Q5ZTIFEIuB8O45eTXJcTWKvrLo9cMAXURgtx-RELtPz2y5YTIHxNGs9QwjKVurugbsVDQsa--hgkI7_m
 
 ## 外汇掉期 FX Swap
 - 给予买方以某一交割日的A货币同时，卖出另一个交割日的A货币，这两笔（first leg,second leg）买卖货币数额相同，买卖方向相反，交割日期不同。
