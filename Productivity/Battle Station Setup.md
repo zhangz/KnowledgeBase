@@ -13,6 +13,7 @@
 - Git Extensions http://gitextensions.github.io/
 - LINQPad http://www.linqpad.net/
 - RoslynPad https://roslynpad.net/
+- Waf DotNetPad http://jbe2277.github.io/dotnetpad/
 - MarkdownPad http://markdownpad.com/
 - Visual Studio Code https://code.visualstudio.com/
 - dotPeek https://www.jetbrains.com/decompiler/
