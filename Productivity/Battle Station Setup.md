@@ -27,6 +27,7 @@
 - snipaste http://zh.snipaste.com/
 - A multi-tabbed SSH client with SCP support http://smartty.sysprogs.com/
 - .NET assembly editor, decompiler, and debugger https://github.com/0xd4d/dnSpy
+- Assembly file comparison tool for .NET https://github.com/bitdiffer/bitdiffer
 
 ## Visual Studio Extensions
 - VSColorOutput https://marketplace.visualstudio.com/items?itemName=MikeWard-AnnArbor.VSColorOutput
