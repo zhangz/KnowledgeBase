@@ -233,3 +233,4 @@ circumstances objects will be returned to the mercy of the garbage collector.
 to balance the pool size based on the frequency and amount of allocation requests.
 
 - https://github.com/mattwarren/gcvisualisation
+- https://blogs.msdn.microsoft.com/seteplia/2017/01/05/understanding-different-gc-modes-with-concurrency-visualizer/
