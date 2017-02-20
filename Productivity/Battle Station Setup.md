@@ -54,6 +54,27 @@
 - Comment Remover https://marketplace.visualstudio.com/items?itemName=MadsKristensen.CommentRemover
 - AnyStatus https://marketplace.visualstudio.com/items?itemName=AlonAmsalem.AnyStatus
 
+## Visual Studio Code Extensions
+- Auto Close Tag
+- beautify
+- C#
+- C# IL Viewer 
+- change-case
+- Code Runner 
+- Debugger for Chrome
+- Excel Viewer 
+- FontSize Shortcuts 
+- Go
+- join-lines
+- Markdown+Math
+- Material Icon Theme 
+- Paste and Indent
+- Python
+- Python-autopep8 
+- Rainbow Brackets
+- REST Client
+- seti-icons
+
 ## Chrome Extensions
 - Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
 - Postman https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
