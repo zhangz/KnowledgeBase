@@ -10,7 +10,6 @@ https://sublime.wbond.net/installation
 - SideBarEnhancements
 - Themr
 - Anaconda
-- Pylinter
 - Modific
 - GitGutter
 - GitSavvy
@@ -18,6 +17,8 @@ https://sublime.wbond.net/installation
 - Python PEP8 Autoformat
 - HTMLBeautify
 - Alignment
+- Pylinter
+- All Autocomplete
 
 ## Theme
 - Material
