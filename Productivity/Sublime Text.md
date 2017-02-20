@@ -17,7 +17,6 @@ https://sublime.wbond.net/installation
 - Python PEP8 Autoformat
 - HTMLBeautify
 - Alignment
-- Pylinter
 - All Autocomplete
 
 ## Theme
