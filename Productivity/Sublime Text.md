@@ -10,6 +10,7 @@ https://sublime.wbond.net/installation
 - SideBarEnhancements
 - Themr
 - Anaconda
+- Modific
 - GitGutter
 - GitSavvy
 - GitStatusBar
