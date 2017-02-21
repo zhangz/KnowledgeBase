@@ -58,7 +58,8 @@
 - Auto Close Tag
 - beautify
 - C#
-- C# IL Viewer 
+- C# IL Viewer
+- C# Extensions
 - change-case
 - Code Runner 
 - Debugger for Chrome
@@ -74,6 +75,12 @@
 - Rainbow Brackets
 - REST Client
 - seti-icons
+- Bash Debug
+- Better Merge
+- EditorConfig for VS Code
+- Output Colorizer
+- Settings Sync
+- Mono Debug
 
 ## Chrome Extensions
 - Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
