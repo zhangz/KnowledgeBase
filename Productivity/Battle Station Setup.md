@@ -81,6 +81,7 @@
 - Output Colorizer
 - Settings Sync
 - Mono Debug
+- GBKtoUTF8
 
 ## Chrome Extensions
 - Page Monitor https://chrome.google.com/webstore/detail/page-monitor/ogeebjpdeabhncjpfhgdibjajcajepgg
