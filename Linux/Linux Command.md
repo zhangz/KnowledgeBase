@@ -19,7 +19,8 @@
 - `chmod` 改变权限
 - `cat` 编辑文件
 - `less` 显示文件内容
-- `lsb_release -a` 系统版本信息
+- `cat /proc/version` 查看Linux内核版本信息
+- `lsb_release -a` 查看Linux系统版本信息
 
 ## Reference
 http://linuxcommand.org/lc3_learning_the_shell.php
