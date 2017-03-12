@@ -27,7 +27,7 @@ https://sublime.wbond.net/installation
 
 ```
 {
-        // Editor view look-and-feel
+	// Editor view look-and-feel
 	"auto_complete": false,
 	"draw_white_space": "all",
 	"fold_buttons": false,
@@ -42,7 +42,7 @@ https://sublime.wbond.net/installation
 		"draw_active"
 	],
  
-        // Editor behavior
+	// Editor behavior
 	"find_selected_text": true,
 	"highlight_modified_tabs": true,
 	
@@ -52,7 +52,7 @@ https://sublime.wbond.net/installation
 	"word_wrap": true,
 	"wrap_width": 80,
     
-        // Whitespace - no tabs, trimming, end files with \n
+	// Whitespace - no tabs, trimming, end files with \n
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
