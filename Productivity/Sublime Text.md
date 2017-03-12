@@ -61,12 +61,13 @@ https://sublime.wbond.net/installation
 		"SublimeLinter-flake8",
 		"Vintage"
 	],
-	// Follow the PEP 8 recommendations of limiting docstrings to 72 characters and limiting all other lines to 79 characters.
-    	"rulers":
-    	[
-        	72,
-        	79
-    	],
+        // Follow the PEP 8 recommendations of limiting docstrings to 72 characters and limiting all other lines to 79 characters.
+        "rulers":
+        [
+            72,
+            79
+        ],
+        "word_wrap": true,
 	"word_wrap": true,
 	"wrap_width": 80,
 	"color_scheme": "Packages/Tomorrow Night Italics Color Scheme/Tomorrow-Night-Italics.tmTheme",
