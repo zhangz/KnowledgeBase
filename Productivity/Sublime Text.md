@@ -27,20 +27,43 @@ https://sublime.wbond.net/installation
 
 ```
 {
+        // Editor view look-and-feel
 	"auto_complete": false,
-	"close_windows_when_empty": true,
-	"remember_open_files": false,
-	"highlight_modified_tabs": true,
-	"highlight_line": true,
 	"draw_white_space": "all",
+	"fold_buttons": false,
+	"highlight_line": true,
+	"show_minimap": false,
+	"show_full_path": true,
+	"bold_folder_labels": true,
+	// Highlight indentation level
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+ 
+        // Editor behavior
+	"find_selected_text": true,
+	"highlight_modified_tabs": true,
+	
+	// Word wrapping - follow PEP 8 recommendations:
+	// limiting docstrings to 72 characters and limiting all other lines to 79 characters.
+	"rulers": [ 72, 79 ],
+	"word_wrap": true,
+	"wrap_width": 80,
+    
+        // Whitespace - no tabs, trimming, end files with \n
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"detect_indentation" : false,
 	"ensure_newline_at_eof_on_save": true,
-	"find_selected_text": true,
-	"fold_buttons": false,
+		
+	"close_windows_when_empty": true,
+	"remember_open_files": false,
+	"detect_indentation" : false,
+	
+	// Sidebar - exclude distracting files and folders
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -52,6 +75,13 @@ https://sublime.wbond.net/installation
 		"build",
 		"site"
 	],
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.pid",
+		"*.pyc"
+	],
+    
 	"hot_exit": false,
 	"ignored_packages":
 	[
@@ -61,14 +91,8 @@ https://sublime.wbond.net/installation
 		"SublimeLinter-flake8",
 		"Vintage"
 	],
-	// Follow the PEP 8 recommendations of limiting docstrings to 72 characters and limiting all other lines to 79 characters.
-	"rulers":
-	[
-		72,
-		79
-	],
-	"word_wrap": true,
-	"wrap_width": 80,
+	
+	// Colors
 	"color_scheme": "Packages/Tomorrow Night Italics Color Scheme/Tomorrow-Night-Italics.tmTheme",
 	"theme": "Material-Theme-Darker.sublime-theme",
 	"material_theme_accent_orange": true,
@@ -81,9 +105,18 @@ https://sublime.wbond.net/installation
 	"material_theme_small_statusbar": true,
 	"material_theme_small_tab": true,
 	"material_theme_tree_headings": false,
-	"font_face": "YaHei Consolas Hybrid",
-	"font_size": 12,
-	"caret_style": "phase"
+	
+	// Font
+	"font_face": "Ubuntu Mono",
+	"font_size": 16,
+	"font_options": ["subpixel_antialias", "no_bold"],
+	// Adjust line height to increase readability
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	
+	// Cursor style
+	"caret_style": "phase",
+	"wide_caret": true
 }
 ```
 
