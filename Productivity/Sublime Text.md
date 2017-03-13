@@ -56,7 +56,7 @@ https://sublime.wbond.net/installation
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
-	"trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": true, // this can be hazardous for Markdown
 	"ensure_newline_at_eof_on_save": true,
 		
 	"close_windows_when_empty": true,
