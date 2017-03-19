@@ -23,6 +23,11 @@ https://sublime.wbond.net/installation
 - Material
 - Tomorrow Night Italics Color Scheme
 
+## Custom Build System
+Tools -> Build System -> New Build System...
+- `Python2.7.sublime-build`
+- `Python3.5.sublime-build`
+
 ## Shortcuts Cheatsheet
 #### 通用
 - `Alt`：调出菜单
