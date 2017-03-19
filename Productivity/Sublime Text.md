@@ -62,6 +62,7 @@ https://sublime.wbond.net/installation
 	"close_windows_when_empty": true,
 	"remember_open_files": false,
 	"detect_indentation" : false,
+	"show_encoding": true,
 	
 	// Sidebar - exclude distracting files and folders
 	"folder_exclude_patterns":
