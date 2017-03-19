@@ -28,6 +28,9 @@ Tools -> Build System -> New Build System...
 - `Python2.7.sublime-build`
 - `Python3.5.sublime-build`
 
+## Launch from command line
+`ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl`
+
 ## Shortcuts Cheatsheet
 #### 通用
 - `Alt`：调出菜单
