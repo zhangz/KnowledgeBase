@@ -23,61 +23,13 @@ https://sublime.wbond.net/installation
 - Material
 - Tomorrow Night Italics Color Scheme
 
-## User Settings
+## Custom Build System
+Tools -> Build System -> New Build System...
+- `Python2.7.sublime-build`
+- `Python3.5.sublime-build`
 
-```
-{
-	"auto_complete": false,
-	"close_windows_when_empty": true,
-	"remember_open_files": false,
-	"highlight_modified_tabs": true,
-	"highlight_line": true,
-	"draw_white_space": "all",
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true,
-	"trim_automatic_white_space": true,
-	"trim_trailing_white_space_on_save": true,
-	"detect_indentation" : false,
-	"ensure_newline_at_eof_on_save": true,
-	"find_selected_text": true,
-	"fold_buttons": false,
-	"folder_exclude_patterns":
-	[
-		".svn",
-		".git",
-		".hg",
-		"CVS",
-		"_build",
-		"dist",
-		"build",
-		"site"
-	],
-	"hot_exit": false,
-	"ignored_packages":
-	[
-		"Git",
-		"GitSavvy",
-		"RestructuredText",
-		"SublimeLinter-flake8",
-		"Vintage"
-	],
-	"color_scheme": "Packages/Tomorrow Night Italics Color Scheme/Tomorrow-Night-Italics.tmTheme",
-	"theme": "Material-Theme-Darker.sublime-theme",
-	"material_theme_accent_orange": true,
-	"material_theme_accent_scrollbars": true,
-	"material_theme_appbar_orange": true,
-	"material_theme_arrow_folders": true,
-	"material_theme_bullet_tree_indicator": true,
-	"material_theme_compact_sidebar": true,
-	"material_theme_contrast_mode": true,
-	"material_theme_small_statusbar": true,
-	"material_theme_small_tab": true,
-	"material_theme_tree_headings": false,
-	"font_face": "YaHei Consolas Hybrid",
-	"font_size": 12,
-	"caret_style": "phase"
-}
-```
+## Launch from command line
+`ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl`
 
 ## Shortcuts Cheatsheet
 #### 通用
@@ -145,3 +97,5 @@ https://sublime.wbond.net/installation
 - http://wdxtub.com/2016/03/24/sublime-guide/
 - http://sublime-text-unofficial-documentation.readthedocs.io/en/latest/reference/keyboard_shortcuts_win.html
 - http://sublime-text-unofficial-documentation.readthedocs.io/en/latest/reference/keyboard_shortcuts_osx.html
+
+
