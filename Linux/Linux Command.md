@@ -33,6 +33,10 @@
 
 - `less` 显示文件内容
 
+- `cat /proc/version` 查看Linux内核版本信息
+
+- `lsb_release -a` 查看Linux系统版本信息
+
 - 配置DNS
 
   - `vi /etc/resolv.conf` 加入:
