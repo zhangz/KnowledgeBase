@@ -69,6 +69,7 @@
 - join-lines
 - Markdown+Math
 - Material Icon Theme 
+- Material-theme
 - Paste and Indent
 - Python
 - Python-autopep8 
@@ -95,3 +96,5 @@
 ## Python
 - Python Setup on Mac http://sourabhbajaj.com/mac-setup/Python/README.html
 - Python Dev environment with Visual Studio Code https://lnx.azurewebsites.net/python-dev-environment-with-visual-studio-code-on-linux/
+
+
