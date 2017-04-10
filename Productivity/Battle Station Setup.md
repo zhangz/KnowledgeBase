@@ -18,6 +18,7 @@
 - Visual Studio Code https://code.visualstudio.com/
 - dotPeek https://www.jetbrains.com/decompiler/
 - JustDecompile (plugin support) http://www.telerik.com/products/decompiler.aspx
+- JustAssembly http://www.telerik.com/justassembly
 - Gistlyn http://gistlyn.com/
 - Anaconda https://www.continuum.io/downloads
 - f.lux https://justgetflux.com/
