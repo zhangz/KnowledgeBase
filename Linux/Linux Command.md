@@ -1,61 +1,39 @@
 ## Commands
 - `.` 当前目录
-
 - `..` 上一级目录
-
 - `mkdir` 创建目录
-
 - `cd` 切换目录
-
 - `cd ..` 到上一级目录
-
 - `cd /` 到root目录
-
 - `cd ~` 到当前用户的home目录
-
 - `pwd` 打印工作目录路径
-
 - `whoami` 打印登录用户id
-
 - `ls` 列目录
-
 - `ls -a` 包含权限信息
-
 - `ls -la` 显示隐藏文件及目录
-
 - `clear` 清屏
-
 - `free` 查看内存，默认以kb为单位
-
-- `free -g`
-
-- `free -m`
-
+  - `free -g`
+  - `free -m`
 - `cp` 复制文件或目录
-
-- `mv` 移动文件或目录，`mv ../mynote .`把上一级目录的mynote文件移动到当前目录
-
+  - `cp .bashrc .bashrc-backup`
+- `mv` 移动文件或目录
+  - `mv ../mynote .`把上一级目录的mynote文件移动到当前目录
 - `rm` 删除文件
-
 - `rmdir` 删除空文件夹
-
 - `chmod` 改变权限
-
 - `cat` 编辑文件
-
 - `less` 显示文件内容
-
 - `cat /proc/version` 查看Linux内核版本信息
-
 - `lsb_release -a` 查看Linux系统版本信息
-
 - 配置DNS
-
+  
   `vi /etc/resolv.conf` 加入:
   ```
   nameserver 8.8.8.8
   nameserver 8.8.4.4
   ```
+- `history` 查看执行过的命令
 
 ## 文件所有者和权限
 
@@ -102,8 +80,20 @@ mount /dev/yourdevice /storage/mountpoint
 ## 系统管理
 
 - `top` 查看进程状态
-- `killall`  shut down program by name
-- `kill` shut down process
+- `kill` shut down process by id
+- `killall`  shut down process by name
+- `su` stands for switch user, if you don’t specify an account, it allows you to switch to the root account, assuming you know the password. Ubuntu locks the root account, so su won’t work for root access.
+- `sudo` get administrative privileges but not using root. In order to use this command, the login user should be in the sudo group.
+
+## File System Hierarchy
+- `/` The directory holding all of your directories. Called root.
+- `/root` The home directory of the root user.
+- `/home` Your personal files and personal configurations.
+- `/bin, /sbin, and /usr` Your binary applications, or programs. The binaries in `/sbin` are usually require root access to run. The `/usr` directory holds user applications, it has its own `/bin` and `/sbin` folders.
+- `/etc` Your systemwide configuration files. These aren’t binaries.
+- `/lib` Your systemwide libraries.
+- `/opt` Applications installed from outside of your software repository.
+- `/tmp` Your temporary files. Files saved here usually disappear between reboots.
 
 ## Reference
 
