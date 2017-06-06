@@ -51,20 +51,19 @@
 
 - 配置DNS
 
-- `vi /etc/resolv.conf` 加入:
-
-- ```
+  `vi /etc/resolv.conf` 加入:
+  ```
   nameserver 8.8.8.8
   nameserver 8.8.4.4
   ```
 
-#### 文件所有者和权限
+## 文件所有者和权限
 
 Linux 的文件权限分为三个用户组：`user`, `group` 和 `others`，每组有三个权限：读(`r`)，写(`w`)，执行(`x`)。我们可以利用 `chmod`命令来修改权限，如：`chmod 777 filename.txt`
 
 不用数字的话，可以用字母，`chmod u+x filename.txt` 这个命令就给 user 添加了执行权限。如果要更改文件所属，使用 `chown` 命令，具体可以参见 `man chown`
 
-#### SSH
+## SSH
 
 在执行 SSH 命令时，如果太久没有操作，就会自动断开，执行的脚本也会终止，如果不希望这样，有以下几种方式可以避免 SSH 超时：
 
@@ -72,7 +71,7 @@ Linux 的文件权限分为三个用户组：`user`, `group` 和 `others`，�
 2.  用 `nohup` 执行脚本
 3.  通过远程屏幕管理(remote sreen management)来保持 terminal sessions
 
-### 磁盘操作
+## 磁盘操作
 
 #### 管理分区
 
@@ -81,28 +80,30 @@ Linux 的文件权限分为三个用户组：`user`, `group` 和 `others`，�
 `parted -l` 会列出系统中的所有分区。具体的顺序是按照 `/dev` 下的顺序。
 
 `parted` 还可以用来为每个分区设置类型和文件系统，例如
-
 ```
 parted /dev/xvdX mklabel gpt
 parted /dev/xvdX mkpart db ext4 0% 10G
 ```
-
 如果不加任何参数，`parted` 就会进入交互模式，这里你可以利用 `mkfs` 来格式化一个分区，如 `mkfs.ext4 /dev/xvdX1`
 
 #### 挂载分区
 
 在分区和格式化之后，如果想要使用就需要把分区挂载在某个挂载点上，通常来说会挂载在 `/mnt` 或者 `/mount` 上，可移除的媒介，例如 USB 和 CDROM，会挂载在 `/media` 上，当然，你可以把分区挂载在任何地方，如：
-
 ```
 mkdir /storage/mountpoint
 mount /dev/yourdevice /storage/mountpoint
 ```
-
-### 配置服务和启动
+## 配置服务和启动
 
 如果想要开机启动，需要参考应用本身的帮助文档，但是总体来说，服务需要安装在 `/etc/init.d` 中，这使得这些脚本可以在启动时运行。例如，如果 mysql 脚本在 `/etc/init.d` 中，那么可以使用这个命令 `service mysql [start|stop|restart]`。
 
 想要了解更多，请参阅[这里](http://www.tldp.org/HOWTO/HighQuality-Apps-HOWTO/boot.html)
+
+## 系统管理
+
+- `top` 查看进程状态
+- `killall`  shut down program by name
+- `kill` shut down process
 
 ## Reference
 
