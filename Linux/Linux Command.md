@@ -97,7 +97,9 @@ mount /dev/yourdevice /storage/mountpoint
 
 ## Reference
 
--   http://linuxcommand.org/lc3_learning_the_shell.php
--   [The Advanced Bash Scripting Guide](http://tldp.org/LDP/abs/html/)
--   [The Art of the Command Line](https://github.com/jlevy/the-art-of-command-line)
+- http://linuxcommand.org/lc3_learning_the_shell.php
+- [The Advanced Bash Scripting Guide](http://tldp.org/LDP/abs/html/)
+- [The Art of the Command Line](https://github.com/jlevy/the-art-of-command-line)
+- http://billie66.github.io/TLCL/index.html
+- https://explainshell.com/
 
