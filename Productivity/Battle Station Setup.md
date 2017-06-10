@@ -94,8 +94,4 @@
 - JSON Formatter https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
 - Octotree https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc/
 
-## Python
-- Python Setup on Mac http://sourabhbajaj.com/mac-setup/Python/README.html
-- Python Dev environment with Visual Studio Code https://lnx.azurewebsites.net/python-dev-environment-with-visual-studio-code-on-linux/
-
 
