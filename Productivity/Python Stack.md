@@ -10,8 +10,6 @@
 
 ## Version/Environment Management
 #### Windows
-- [最省心的Python版本和第三方库管理——初探Anaconda](https://zhuanlan.zhihu.com/p/25198543)
-- [Managing multiple Python environments using Anaconda](http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda)
 - [How to run multiple Python versions on Windows](https://stackoverflow.com/questions/4583367/how-to-run-multiple-python-versions-on-windows)
 - [Python Launcher for Windows](https://docs.python.org/3/using/windows.html?highlight=shebang#python-launcher-for-windows)
 
@@ -19,6 +17,10 @@
 - [使用pyenv管理工作环境](https://zhuanlan.zhihu.com/p/27294128)
 - [Python 多版本共存之 pyenv](http://seisman.info/python-pyenv.html)
 - [The definitive guide to setup my Python workspace](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
+
+#### Both
+- [最省心的Python版本和第三方库管理——初探Anaconda](https://zhuanlan.zhihu.com/p/25198543)
+- [Managing multiple Python environments using Anaconda](http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda)
 
 ## References
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
