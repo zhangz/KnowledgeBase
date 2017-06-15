@@ -8,11 +8,16 @@
 - [pipfile](https://github.com/pypa/pipfile)
 - [Marriage of Pipfile, Pip, & Virtualenv](https://github.com/kennethreitz/pipenv)
 
-## Version Management
+## Version/Environment Management
 #### Windows
 - [Managing multiple Python environments using Anaconda](http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda)
 - [How to run multiple Python versions on Windows](https://stackoverflow.com/questions/4583367/how-to-run-multiple-python-versions-on-windows)
 - [Python Launcher for Windows](https://docs.python.org/3/using/windows.html?highlight=shebang#python-launcher-for-windows)
+
+#### Linux/Mac
+- [使用pyenv管理工作环境](https://zhuanlan.zhihu.com/p/27294128)
+- [Python 多版本共存之 pyenv](http://seisman.info/python-pyenv.html)
+- [The definitive guide to setup my Python workspace](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
 
 ## References
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
