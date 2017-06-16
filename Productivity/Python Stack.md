@@ -29,3 +29,4 @@
 ## References
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
 - [Python Tutor](http://www.pythontutor.com)
+- [My Python Environment Workflow with Conda](http://tdhopper.com/blog/2015/Nov/24/my-python-environment-workflow-with-conda/)
