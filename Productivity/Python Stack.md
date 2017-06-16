@@ -17,10 +17,14 @@
 - [使用pyenv管理工作环境](https://zhuanlan.zhihu.com/p/27294128)
 - [Python 多版本共存之 pyenv](http://seisman.info/python-pyenv.html)
 - [The definitive guide to setup my Python workspace](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
+- [autoenv](https://github.com/kennethreitz/autoenv)
 
 #### Both
 - [最省心的Python版本和第三方库管理——初探Anaconda](https://zhuanlan.zhihu.com/p/25198543)
 - [Managing multiple Python environments using Anaconda](http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda)
+
+## Deployment
+- [Fabric](http://www.fabfile.org/)
 
 ## References
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
