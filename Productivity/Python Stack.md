@@ -1,6 +1,7 @@
 ## Python Installation
 - Python Setup on Mac http://sourabhbajaj.com/mac-setup/Python/README.html
 - Python Dev environment with Visual Studio Code https://lnx.azurewebsites.net/python-dev-environment-with-visual-studio-code-on-linux/
+- [Python and VS Code](http://mahugh.com/2016/04/27/python-and-vs-code/)
 
 ## Dependency Management
 - [pipreqs - Generate pip requirements.txt file based on imports of any project](https://github.com/bndr/pipreqs)
