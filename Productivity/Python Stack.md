@@ -1,6 +1,6 @@
 ## Python Installation
-- Python Setup on Mac http://sourabhbajaj.com/mac-setup/Python/README.html
-- Python Dev environment with Visual Studio Code https://lnx.azurewebsites.net/python-dev-environment-with-visual-studio-code-on-linux/
+- [Python Setup on Mac](http://sourabhbajaj.com/mac-setup/Python/README.html)
+- [Python Dev environment with Visual Studio Code](https://lnx.azurewebsites.net/python-dev-environment-with-visual-studio-code-on-linux/)
 - [Python and VS Code](http://mahugh.com/2016/04/27/python-and-vs-code/)
 
 ## Dependency Management
@@ -23,6 +23,9 @@
 #### Both
 - [最省心的Python版本和第三方库管理——初探Anaconda](https://zhuanlan.zhihu.com/p/25198543)
 - [Managing multiple Python environments using Anaconda](http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda)
+
+#### Switch Version
+There's a handy way to do this, which comes built right in to the latest Python versions and requires no additional tools or preplanning. You can simply use the `py` launcher instead of `python.exe`, and it will run your highest-numbered Python 2.x version installed. Alternatively, you can use `py -3`, and it will run your highest-numbered Python 3.x version installed.
 
 ## Deployment
 - [Fabric](http://www.fabfile.org/)
