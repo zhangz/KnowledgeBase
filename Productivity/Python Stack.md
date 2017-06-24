@@ -23,6 +23,7 @@
 #### Both
 - [最省心的Python版本和第三方库管理——初探Anaconda](https://zhuanlan.zhihu.com/p/25198543)
 - [Managing multiple Python environments using Anaconda](http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda)
+- [My Python Environment Workflow with Conda](http://tdhopper.com/blog/2015/Nov/24/my-python-environment-workflow-with-conda/)
 
 #### Switch Version
 There's a handy way to do this, which comes built right in to the latest Python versions and requires no additional tools or preplanning. You can simply use the `py` launcher instead of `python.exe`, and it will run your highest-numbered Python 2.x version installed. Alternatively, you can use `py -3`, and it will run your highest-numbered Python 3.x version installed.
@@ -33,4 +34,3 @@ There's a handy way to do this, which comes built right in to the latest Python 
 ## References
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
 - [Python Tutor](http://www.pythontutor.com)
-- [My Python Environment Workflow with Conda](http://tdhopper.com/blog/2015/Nov/24/my-python-environment-workflow-with-conda/)
