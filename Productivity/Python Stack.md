@@ -35,6 +35,10 @@ There's a handy way to do this, which comes built right in to the latest Python 
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
 - [Python Tutor](http://www.pythontutor.com)
 - [Python API Checklist](http://python.apichecklist.com/)
+- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+- [Code Style - The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/writing/style/)
+
+## Learning
 - [Requests源码阅读](https://github.com/zhangz/read_requests)
 - [Reading Great Code](http://python-guide-pt-br.readthedocs.io/en/latest/writing/reading/)
 - [Let's read code: the python-requests library](https://www.slideshare.net/onceuponatimeforever/lets-read-code)
