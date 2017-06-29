@@ -37,6 +37,7 @@ There's a handy way to do this, which comes built right in to the latest Python 
 - [Python API Checklist](http://python.apichecklist.com/)
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 - [Code Style - The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/writing/style/)
+- [Pragmatic Unicode](https://nedbatchelder.com/text/unipain.html)
 
 ## Learning
 - [Requests源码阅读](https://github.com/zhangz/read_requests)
