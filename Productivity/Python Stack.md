@@ -31,6 +31,8 @@ There's a handy way to do this, which comes built right in to the latest Python 
 ## Deployment
 - [Fabric](http://www.fabfile.org/)
 - [Python 进程管理工具 Supervisor 使用教程](http://www.restran.net/2015/10/04/supervisord-tutorial/)
+- [Circus - a program that runs and watches processes and sockets](https://github.com/circus-tent/circus)
+- [Gunicorn - a Python WSGI HTTP Server](http://gunicorn.org/)
 
 ## References
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest)
