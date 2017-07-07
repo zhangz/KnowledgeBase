@@ -81,7 +81,10 @@ mount /dev/yourdevice /storage/mountpoint
 
 - `top` 查看进程状态
 - `kill` shut down process by id
+- `kill -9 PID` 强制结束进程，进程在结束后不能自我清理，会导致系统资源无法正常释放，一般不推荐使用，除非其他办法都无效。
+- `kill -15 PID` 建议使用15来结束进程
 - `killall`  shut down process by name
+- 'ps -aux | grep firefox' 查看进程状态
 - `su` stands for switch user, if you don’t specify an account, it allows you to switch to the root account, assuming you know the password. Ubuntu locks the root account, so su won’t work for root access.
 - `sudo` get administrative privileges but not using root. In order to use this command, the login user should be in the sudo group.
 
