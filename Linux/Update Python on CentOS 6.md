@@ -1,14 +1,12 @@
 ## 在CentOS 6.X 上面安装 Python 2.7.x
 #### 更新系统和开发工具集
-- yum
 ```
-yum -y update
-yum groupinstall -y 'development tools'
-```
-
-- 安装 python 需要的额外软件包 SSL, bz2, zlib
-```
-yum install -y zlib-devel bzip2-devel openssl-devel xz-libs wget
+# Compilers and related tools:
+yum groupinstall -y "development tools"
+# Libraries needed during compilation to enable all features of Python:
+yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel
+# If you are on a clean "minimal" install of CentOS you also need the wget tool:
+yum install -y wget
 ```
 
 #### 源码安装Python 2.7.x
@@ -16,7 +14,8 @@ yum install -y zlib-devel bzip2-devel openssl-devel xz-libs wget
 wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tar.xz
 tar -xvf Python-2.7.13.tar.xz
 cd Python-2.7.13
-./configure
+# enable UTF-32 in Python 2.7 by passing --enable-unicode=ucs4 to the configure command.
+./configure --enable-shared --enable-unicode=ucs4
 make
 make install
 make clean
@@ -65,3 +64,6 @@ cd setuptools-1.4.2
 # 使用 Python 2.7.13 安装 setuptools
 python2.7 setup.py install
 ```
+
+## Reference
+[How to install the latest version of Python on CentOS](https://danieleriksson.net/2017/02/08/how-to-install-latest-python-on-centos/)
