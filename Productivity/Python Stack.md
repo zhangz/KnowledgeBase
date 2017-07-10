@@ -8,6 +8,7 @@
 - [A set of tools to keep your pinned Python dependencies fresh](https://github.com/jazzband/pip-tools)
 - [pipfile](https://github.com/pypa/pipfile)
 - [Marriage of Pipfile, Pip, & Virtualenv](https://github.com/kennethreitz/pipenv)
+- [pip-review](https://github.com/jgonggrijp/pip-review)
 
 ## Version/Environment Management
 #### Windows
