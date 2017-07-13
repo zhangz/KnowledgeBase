@@ -50,3 +50,7 @@ firewall-cmd --permanent --zone=public --add-port=7077/tcp
 firewall-cmd --permanent --zone=public --add-port=8080-8081/tcp
 firewall-cmd --reload
 ```
+
+#### Resources
+- [Spark Configuration](http://spark.apache.org/docs/latest/configuration.html)
+- [Spark Examples](http://spark.apache.org/examples.html)
