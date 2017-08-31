@@ -9,6 +9,10 @@
 - [pipfile](https://github.com/pypa/pipfile)
 - [Marriage of Pipfile, Pip, & Virtualenv](https://github.com/kennethreitz/pipenv)
 - [pip-review](https://github.com/jgonggrijp/pip-review)
+Upgrade all Python packages
+```
+sudo pip2 freeze — local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 sudo pip2 install -U
+```
 
 ## Version/Environment Management
 #### Windows
