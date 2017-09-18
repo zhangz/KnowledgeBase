@@ -27,6 +27,7 @@ sudo pip2 freeze — local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 sudo
 - [autoenv](https://github.com/kennethreitz/autoenv)
 - [Python Virtual Environments - a Primer](https://realpython.com/blog/python/python-virtual-environments-a-primer/)
 - [Environment Management with Pipenv](http://docs.pipenv.org/en/latest/advanced.html#crude-installation-of-pipenv)
+- [Setting up Python on a Unix machine (with pyenv and direnv)](https://mike.place/2017/python-pyenv/)
 
 #### Both
 - [最省心的Python版本和第三方库管理——初探Anaconda](https://zhuanlan.zhihu.com/p/25198543)
